@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SabioTrade</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        font-family: "Inter", Helvetica, sans-serif;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        border: 0;
+        line-height: 100%;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      table {
+        border-collapse: collapse !important;
+      }
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+      table {
+        border-collapse: separate;
+      }
+
+      b,
+      strong {
+        font-weight: bold !important;
+      }
+
+      @media screen and (max-width: 525px) {
+        .wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .center {
+          text-align: center !important;
+        }
+        .two-columns .column {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .three-columns .column {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      }
+      /* iPads (landscape) Styling */
+      @media handheld, all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        .wrapper-ipad {
+          max-width: 280px !important;
+        }
+        .table-max-ipad {
+          max-width: 465px !important;
+        }
+      }
+
+      /* iPads (portrait) Styling */
+      @media handheld, all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        .wrapper-ipad {
+          max-width: 280px !important;
+        }
+        .table-max-ipad {
+          max-width: 465px !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0 !important; padding: 0 !important; background: #f9f9fc; font-family: Inter, Helvetica, sans-serif">
+    <div style="font-size: 0px; color: #262119; line-height: 1px; mso-line-height-rule: exactly; display: none; max-width: 0px; max-height: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: Inter, Helvetica, sans-serif">
+      SabioTrade&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;
+    </div>
+
+    <center style="width: 100%; table-layout: fixed; padding: 0">
+      <div bgcolor="#F9F9FC" style="background-color: #f9f9fc">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 600px; margin: 0 auto; font-family: Inter, Helvetica, sans-serif">
+          <tr>
+            <td style="padding: 0 10px 0">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!-- header -->
+                <tr>
+                  <td align="center" style="font-size: 0; padding: 25px 0 32px" class="two-columns">
+                    <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td valign="middle" style="vertical-align: middle; padding: 0 15px 0 0">
+                          <table align="left" role="presentation" style="max-width: 160px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td>
+                                <a href="#" target="_blank" rel="noopener"><img src="https://sabiotrade.com/storage/media/5304/Sabiotrade-LogoCombination.png" border="0" alt="SabioTrade" style="display: block; border: 0; width: 160px" width="160" /></a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="middle" style="vertical-align: middle">
+                          <table align="right" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="vertical-align: middle; white-space: nowrap">
+                                <a href="#" target="_blank" rel="noopener" style="font-weight: normal; font-size: 14px; line-height: 21px; color: #1c1e4e; text-decoration: none; white-space: nowrap">
+                                  <span style="vertical-align: middle">Go to Sabioverse</span>
+                                  <img src="https://sabiotrade.com/storage/media/4751/r-icon.png" border="0" alt="SabioTrade" style="border: 0; width: 24px; vertical-align: middle" width="24" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- header end -->
+
+                <!-- main -->
+
+                <tr>
+                  <td style="padding: 0 0 40px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#216FFE" style="padding: 32px 32px 0; background-color: #216ffe; border-radius: 32px 32px 0 0">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 516px">
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <strong style="margin: 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #ffffff">24h left: Start your real challenge with -20%</strong>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <h1 style="margin: 0; font-weight: bold; font-size: 40px; line-height: 50px; color: #ffffff">Ready to move beyond demo?</h1>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <p style="margin: 0; font-weight: normal; font-size: 20px; line-height: 28px; color: #ffffff">You’ve learned the basics. Now test yourself in a real assessment environment.</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td bgcolor="#216FFE" align="center" style="border-radius: 0 0 32px 32px; background-color: #216ffe">
+                          <img src="https://sabiotrade.com/storage/media/5474/img-1.png" width="100%" border="0" alt="SabioTrade" style="display: block; border: 0; width: 100%; max-width: 366px" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 40px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D7E5FF" style="padding: 32px; background-color: #d7e5ff; border-radius: 32px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr>
+                              <td align="center" style="padding: 0 0 21px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff; text-align: center">20% Off All Plans With Promo Code</h2>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td align="center" style="padding: 0 0 21px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000; text-align: center">
+                                  Easy entry into your first real challenge —<br />
+                                  our gift to support you!
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td style="padding: 0 0 21px">
+                                <table width="100%" style="width: 100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#7186DC" style="background-color: #7186dc; border-radius: 1000px; padding: 56px 15px; background: linear-gradient(335deg, #16c1ff 0%, #b39ad2 38.36%, #7186dc 67%, #1800d0 100%)">
+                                      <table width="100%" style="width: 100%" role="presentation" border="0" cellspacing="0" cellpadding="0" align="center">
+                                        <tr>
+                                          <td align="center" style="padding: 0 0 8px">
+                                            <strong style="margin: 0; font-weight: bold; font-size: 50px; line-height: 55px; color: #ffffff; text-align: center"> [PROMOCODE] </strong>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center">
+                                            <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #ffffff; text-align: center">Valid for 24 hours only!</p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td style="padding: 0 0 21px">
+                                <table width="100%" style="width: 100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#E3EDFF" style="background-color: #e3edff; padding: 8px 16px; border-radius: 16px">
+                                      <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td>
+                                            <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000">
+                                              <b style="font-weight: bold">Example:</b><br />
+                                              Essential plan with $20,000 initial balance: <b style="font-weight: bold"><s>€119</s> &rarr; €95</b>
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td valign="center" align="center" style="border-radius: 100px; display: block">
+                                <table role="presentation" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%">
+                                  <tr>
+                                    <td style="text-align: center">
+                                      <a class="btn" width="100%" href="#" target="_blank" style="background-color: #1a22ff; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff; text-align: center; text-decoration: none; padding: 14px 17px; display: block; border-radius: 100px; white-space: nowrap; border: 2px solid #8f93ff">Start Your Assessment</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 64px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D7E5FF" style="padding: 0 0 32px 32px; background-color: #d7e5ff; border-radius: 32px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 548px">
+                            <tr>
+                              <td style="font-size: 0" class="two-columns">
+                                <!--[if (gte mso 9)|(IE)]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" role="presentation" dir="rtl">
+                                        <tr>
+                                        <td dir="ltr">
+                                      <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="middle" align="center" style="vertical-align: middle; width: 100%; max-width: 260px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 0 0 0">
+                                      <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td style="padding: 32px 0 24px">
+                                            <h3 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #000b36">When you pass the assessment:</h3>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td style="padding: 0 0 5px">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                              <tr>
+                                                <td valign="top" style="vertical-align: top; padding: 0 7px 0">
+                                                  <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">&bull;</p>
+                                                </td>
+                                                <td valign="top" style="vertical-align: top">
+                                                  <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">Get your Sabio Certificate</p>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td style="padding: 0 0 5px">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                              <tr>
+                                                <td valign="top" style="vertical-align: top; padding: 0 7px 0">
+                                                  <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">&bull;</p>
+                                                </td>
+                                                <td valign="top" style="vertical-align: top">
+                                                  <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">Trade funded capital</p>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td style="padding: 0 0 24px">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                              <tr>
+                                                <td valign="top" style="vertical-align: top; padding: 0 7px 0">
+                                                  <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">&bull;</p>
+                                                </td>
+                                                <td valign="top" style="vertical-align: top">
+                                                  <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">Move toward weekly payouts</p>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td valign="center" style="border-radius: 100px; display: block">
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td style="text-align: center">
+                                                  <a class="btn" width="100%" href="#" target="_blank" style="background-color: #1a22ff; font-weight: normal; font-size: 16px; line-height: 21px; color: #ffffff; text-align: center; text-decoration: none; padding: 16px 36px; display: block; border-radius: 100px; white-space: nowrap; border: 1px solid #8f93ff">Choose your plan</a>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+
+                                <!--[if (gte mso 9)|(IE)]>
+                                        </td><td>
+                                      <![endif]-->
+
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="middle" align="right" style="vertical-align: middle; width: 100%; max-width: 288px; display: inline-block">
+                                  <tr>
+                                    <td style="padding: 0 0 0" border="0" cellspacing="0" cellpadding="0">
+                                      <img src="https://sabiotrade.com/storage/media/5472/img-2.png" width="288" border="0" alt="SabioTrade" style="display: block; border: 0; width: 288px" />
+                                    </td>
+                                  </tr>
+                                </table>
+
+                                <!--[if (gte mso 9)|(IE)]>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                      <![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- footer-two -->
+                <tr>
+                  <td style="padding: 0 0 48px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 580px">
+                      <tr>
+                        <td style="padding: 0 0 16px">
+                          <p style="margin: 0; color: #1c1e4e; font-size: 16px; line-height: 24px">
+                            Got any questions about SabioTrade? Our dedicated
+                            <a href="https://discord.com/invite/hgMTA62ZET" target="_blank" style="text-decoration: underline; color: #0057fa">Support Service</a> is always here to help. Drop us a message, and we'll be right with you!
+                          </p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <strong style="margin: 0; color: #1c1e4e; font-size: 16px; line-height: 24px; font-weight: bold"> Stay informed and stay ahead with Sabiotrade. For real-time updates and insights, follow our social channels. We're here to support your trading journey.</strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- footer -->
+                <tr>
+                  <td style="padding: 0 10px 0">
+                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; max-width: 480px">
+                      <tr>
+                        <td align="center">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 580px">
+                            <tr>
+                              <td align="center">
+                                <p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; letter-spacing: 1 px; text-transform: uppercase; font-weight: bold; font-weight: bold">RISK WARNING:</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height="4" style="height: 4px; font-size: 0"></td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 0 25px">
+                                <p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; text-align: center">The content on this website is for general information only.</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; text-align: center">The service and company website are provided on an "as-is" basis and without warranty of any kind, including, but not limited to warranties of title, merchantability, accuracy, fitness for a particular purpose, security, and non-infringement.</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="16" style="height: 16px; font-size: 0"></td>
+                      </tr>
+                      <tr>
+                        <td align="center">
+                          <table role="presentation" width="240" border="0" cellspacing="0" cellpadding="0" style="max-width: 240px">
+                            <tr>
+                              <td align="center" height="24" width="24">
+                                <table role="presentation" width="20" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" height="24" width="24">
+                                      <a href="https://discord.gg/hgMTA62ZET" title="Discord" target="_blank">
+                                        <img src="https://fsms.quadcode.com/storage/public/ck/42/o28d0gfttt1fdojg/discrord.png" height="24" width="24" alt="Discord" style="display: block; border: 0; width: 24px; height: 24px" />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td align="center" height="24" width="24">
+                                <table role="presentation" width="20" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" height="24" width="24">
+                                      <a href="https://t.me/sabiotrade" title="telegram" target="_blank">
+                                        <img src="https://fsms.quadcode.com/storage/public/ck/42/o2e1fignqlbpc4e0/tg.png" height="24" width="24" alt="telegram" style="display: block; border: 0; width: 24px; height: 24px" />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td align="center" height="24" width="24">
+                                <table role="presentation" width="20" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" height="24" width="24">
+                                      <a href="https://www.instagram.com/sabiotrade/" title="instagram" target="_blank">
+                                        <img src="https://fsms.quadcode.com/storage/public/ck/42/o2e1fignqlbpc4b0/inst.png" height="24" width="24" alt="instagram" style="display: block; border: 0; width: 24px; height: 24px" />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td align="center" height="24" width="24">
+                                <table role="presentation" width="20" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" height="24" width="24">
+                                      <a href="https://www.facebook.com/people/Sabio-Trade/100075852953720/" title="facebook" target="_blank">
+                                        <img src="https://fsms.quadcode.com/storage/public/ck/42/o2e1fignqlbpc4ag/fa.png" height="24" width="24" alt="facebook" style="display: block; border: 0; width: 24px; height: 24px" />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="20" style="height: 20px; font-size: 0"></td>
+                      </tr>
+                      <tr>
+                        <td align="center">
+                          <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td>
+                                <a target="_blank" style="text-decoration: underline; color: #4a4c8e; font-size: 14px; line-height: 22px" href="https://sabiotrade.com/terms">Terms and Conditions</a>
+                              </td>
+                              <td width="32" style="width: 32px; font-size: 0"></td>
+                              <td>
+                                <a target="_blank" style="text-decoration: underline; color: #4a4c8e; font-size: 14px; line-height: 22px" href="%%PW_EMAIL_UNSUBSCRIBE%%">Unsubscribe</a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="32" style="height: 32px; font-size: 0"></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- footer end -->
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>

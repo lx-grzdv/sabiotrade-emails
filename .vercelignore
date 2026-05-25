@@ -1,0 +1,6 @@
+.DS_Store
+~$*
+*.docx
+development/**
+Templates & Examples/index*.html
+Templates & Examples/1.*

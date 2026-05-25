@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+  Subject: You left {{plan_name}} in your cart — here's what's inside
+  Preheader: {{plan_balance}} in trading capital. Real payouts. Here's how it works.
+  Trigger: Abandoned_cart +1h
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SabioTrade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <style type="text/css">
+      body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; font-family: "Inter", Helvetica, sans-serif; background: #f9f9fc; }
+      table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+      img { border: 0; line-height: 100%; text-decoration: none; -ms-interpolation-mode: bicubic; }
+      table { border-collapse: separate !important; border-spacing: 0; }
+      a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+      b, strong { font-weight: bold !important; }
+      @media screen and (max-width: 525px) {
+        .two-columns .column { width: 100% !important; max-width: 100% !important; display: block !important; }
+        .header-logo, .header-cta { display: block !important; width: 100% !important; max-width: 100% !important; text-align: center !important; }
+        .header-logo { padding: 0 0 16px !important; }
+        .mobile-block { display: block !important; width: 100% !important; max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
+      }
+    </style>
+  </head>
+  <body style="margin: 0 !important; padding: 0 !important; background: #f9f9fc; font-family: Inter, Helvetica, sans-serif">
+    <div style="font-size: 0; color: #262119; line-height: 1px; mso-line-height-rule: exactly; display: none; max-width: 0; max-height: 0; opacity: 0; overflow: hidden; mso-hide: all; font-family: Inter, Helvetica, sans-serif">
+      {{plan_balance}} in trading capital. Real payouts. Here's how it works.
+    </div>
+
+    <center style="width: 100%; table-layout: fixed; padding: 0">
+      <div bgcolor="#F9F9FC" style="background-color: #f9f9fc">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 604px; margin: 0 auto; font-family: Inter, Helvetica, sans-serif" align="center">
+          <tr>
+            <td style="padding: 0 12px">
+              <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center" style="font-size: 0; padding: 16px 0 24px" class="two-columns">
+                    <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td valign="middle" class="header-logo" style="vertical-align: middle; padding: 0 18px 0 0">
+                          <table align="left" role="presentation" style="max-width: 220px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td>
+                                <a href="https://sabiotrade.com/" target="_blank" rel="noopener">
+                                  <img src="https://sabiotrade.com/storage/media/5304/Sabiotrade-LogoCombination.png" border="0" alt="SabioTrade" style="display: block; border: 0; width: 160px; max-width: 100%; height: auto" width="160" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="middle" class="header-cta" style="vertical-align: middle">
+                          <table align="right" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="vertical-align: middle; white-space: nowrap">
+                                <a href="{{checkout_url}}" target="_blank" rel="noopener" style="font-weight: normal; font-size: 14px; line-height: 21px; color: #1c1e4e; text-decoration: none; white-space: nowrap">
+                                  <span style="vertical-align: middle">Resume checkout</span>
+                                  <img src="https://sabiotrade.com/storage/media/4751/r-icon.png" border="0" alt="" style="border: 0; width: 24px; vertical-align: middle" width="24" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#484FFF" style="padding: 36px 32px; background-color: #484fff; border-radius: 32px">
+                          <p style="margin: 0 0 8px; font-weight: bold; font-size: 18px; line-height: 26px; color: #ffffff">Hi {{first_name}},</p>
+                          <h1 style="margin: 0 0 12px; font-weight: bold; font-size: 36px; line-height: 44px; color: #ffffff">Your {{plan_name}} is still waiting in cart.</h1>
+                          <p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">You were one step away from starting the assessment. Here is a quick, clear view of what this plan unlocks.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px; background-color: #d7e5ff; border-radius: 32px">
+                      <tr>
+                        <td style="padding: 28px 24px">
+                          <h2 style="margin: 0 0 16px; font-weight: bold; font-size: 28px; line-height: 34px; color: #1358ff">{{plan_name}} - quick snapshot</h2>
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; border-radius: 20px">
+                            <tr>
+                              <td style="padding: 18px 20px">
+                                <p style="margin: 0 0 10px; font-size: 16px; line-height: 23px; color: #000b36">- Trading balance: <b>{{plan_balance}}</b></p>
+                                <p style="margin: 0 0 10px; font-size: 16px; line-height: 23px; color: #000b36">- Profit target: <b>{{plan_profit_target}}% ({{plan_profit_usd}})</b></p>
+                                <p style="margin: 0 0 10px; font-size: 16px; line-height: 23px; color: #000b36">- Payout on funded account: <b>{{plan_payout}}%</b></p>
+                                <p style="margin: 0; font-size: 16px; line-height: 23px; color: #000b36">- No time limit: trade at your own pace</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#FFFFFF" style="padding: 24px 24px 0; background-color: #ffffff; border-radius: 24px; overflow: hidden">
+                          <h3 style="margin: 0 0 8px; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff">How it works in plain language</h3>
+                          <p style="margin: 0 0 16px; font-size: 16px; line-height: 23px; color: #000b36">You are not depositing into a live account. You are purchasing an assessment. If you pass, SabioTrade provides funded capital and you keep {{plan_payout}}% of payouts.</p>
+                          <img src="https://placehold.co/532x240/edf1ff/2f3fb8?text=Placeholder+%E2%80%94+Assessment+flow+visual" width="532" border="0" alt="Placeholder: assessment flow visual" style="display: block; border: 0; width: 100%; max-width: 532px; height: auto; margin: 0; border-radius: 16px 16px 0 0" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px; background-color: #d9ff00; border-radius: 16px">
+                      <tr>
+                        <td style="padding: 14px 18px">
+                          <p style="margin: 0; font-size: 16px; line-height: 23px; color: #0b0b26">Your cart is saved with the selected plan and price: <b>{{plan_price}}</b>.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                          <a href="{{checkout_url}}" target="_blank" style="display: block; padding: 14px 17px; font-size: 16px; line-height: 23px; color: #ffffff; text-align: center; text-decoration: none">Complete purchase now</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width: 580px">
+                      <tr>
+                        <td style="padding: 0 0 12px">
+                          <p style="margin: 0; color: #1c1e4e; font-size: 16px; line-height: 24px">Got questions? Our <a href="{{SUPPORT_URL}}" target="_blank" style="text-decoration: underline; color: #0057fa">Support Service</a> is here to help.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong style="margin: 0; color: #1c1e4e; font-size: 16px; line-height: 24px; font-weight: bold">Stay informed and stay ahead with SabioTrade.</strong></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; max-width: 480px">
+                      <tr>
+                        <td align="center"><p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold">RISK WARNING:</p></td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 8px 0 20px"><p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; text-align: center">The content on this website is for general information only.</p></td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 0 0 20px">
+                          <a target="_blank" style="text-decoration: underline; color: #4a4c8e; font-size: 14px; line-height: 22px" href="{{TERMS_URL}}">Terms and Conditions</a>
+                          <span style="display: inline-block; width: 28px">&nbsp;</span>
+                          <a target="_blank" style="text-decoration: underline; color: #4a4c8e; font-size: 14px; line-height: 22px" href="{{UNSUBSCRIBE_URL}}">Unsubscribe</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>

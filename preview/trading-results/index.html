@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trading Results Communication — превью</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/hub.css" />
+  </head>
+  <body>
+    <div class="hub">
+      <header class="hub-header">
+        <p><a href="../../index.html">← Оглавление</a></p>
+        <h1>Trading Results Communication</h1>
+        <p class="hub-lead">Event-based серия · 6 писем · триггеры по торговому поведению + Academy links.</p>
+      </header>
+      <main>
+        <ul class="preview-list">
+          <li><a href="TR_01_Capital_Growth_5.html">Email 1 — Capital +5%<span class="variant-desc">Trigger: trading_account_capital_growth_5</span></a></li>
+          <li><a href="TR_02_Daily_Loss_Over_3pct.html">Email 2 — Daily loss over 3%<span class="variant-desc">Trigger: trading_account_daily_loss_over_3pct</span></a></li>
+          <li><a href="TR_03_Consistency_Rule_Triggered.html">Email 3 — Consistency recalculation<span class="variant-desc">Trigger: consistency_rule_triggered</span></a></li>
+          <li><a href="TR_04_Open_Loss_7d.html">Email 4 — Open loss 7+ days<span class="variant-desc">Trigger: trading_account_open_loss_tx_7d</span></a></li>
+          <li><a href="TR_05_Open_Profit_7d.html">Email 5 — Open profit 7+ days<span class="variant-desc">Trigger: trading_account_open_profit_tx_7d</span></a></li>
+          <li><a href="TR_06_Assessment_Passed.html">Email 6 — Assessment passed<span class="variant-desc">Trigger: Assessment_passed</span></a></li>
+        </ul>
+        <p class="hub-lead" style="margin-top: 20px">Превью в рамке: <a href="email-1.html">Email 1</a> · <a href="email-2.html">Email 2</a> · <a href="email-3.html">Email 3</a> · <a href="email-4.html">Email 4</a> · <a href="email-5.html">Email 5</a> · <a href="email-6.html">Email 6</a></p>
+        <section class="hub-meta">
+          <h2>Важно по логике</h2>
+          <ul>
+            <li>Не более 1 письма этой серии в день на одного трейдера.</li>
+            <li>Приоритет конфликтов: daily_loss > consistency_rule > open_loss_7d > open_profit_7d > capital_growth.</li>
+            <li>Assessment_passed отправляется вне frequency cap.</li>
+          </ul>
+        </section>
+        <section class="hub-meta">
+          <h2>События и Academy</h2>
+          <ul class="meta-compact">
+            <li><strong>capital_growth_5:</strong> Chapter 6 — Why Risk Management is Non-Negotiable.</li>
+            <li><strong>daily_loss_over_3pct:</strong> Chapter 5 — Top Mistakes: Psychology and Discipline.</li>
+            <li><strong>consistency_rule_triggered:</strong> Chapter 3 — Foundational Trading Principles.</li>
+            <li><strong>open_loss_tx_7d:</strong> Chapter 4 — Top Mistakes: Strategy and Risk.</li>
+            <li><strong>open_profit_tx_7d:</strong> Chapter 9 — Implementing and Monitoring Risk Management Strategies.</li>
+            <li><strong>Assessment_passed:</strong> From Challenge to Funded (full course).</li>
+          </ul>
+        </section>
+        <section class="hub-meta">
+          <h2>Атрибуты для бэкенда</h2>
+          <ul class="meta-compact">
+            <li><strong>capital_growth_5:</strong> plan_name, current_balance_usd, profit_pct, daily_consistency_limit.</li>
+            <li><strong>daily_loss_over_3pct:</strong> plan_name, daily_loss_limit_usd, daily_remaining_usd.</li>
+            <li><strong>consistency_rule_triggered:</strong> plan_name, trigger_date, trigger_day_profit_usd, old_target_usd, new_target_usd, current_profit_usd, remaining_profit_usd.</li>
+            <li><strong>open_loss_tx_7d:</strong> plan_name, open_loss_usd, max_drawdown_usd, symbol, days_open.</li>
+            <li><strong>open_profit_tx_7d:</strong> plan_name, open_profit_usd, profit_target_usd, daily_consistency_limit_usd, symbol.</li>
+            <li><strong>Assessment_passed:</strong> plan_name, plan_balance, plan_payout.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,958 @@
+SABIOTRADE
+Воронка: Academy Subscription Onboarding
+3 трека онбординга  ·  7 событийных писем  ·  Апрель 2026
+Обзор воронки
+Подписка Academy — отдельный продукт без challenge. Покупатель хочет научиться торговать. Две цели воронки:
+	•	Retention подписки — показать ценность Academy, не дать отписаться
+	•	Апселл в assessment — конвертировать в покупку challenge пока подписка активна
+
+1 Week
+€19.99
+3 письма — дни 0, 3, 6
+4 Weeks
+€39.99
+4 письма — дни 0, 5, 14, 25
+12 Weeks
+€79.99
+8 писем — дни 0,7,21,35,49,63,70,77
+
+
+Настройка в Customer Journey Builder
+Стартовый блок
+Событие
+subscription.created
+Сегментация
+Condition Split по атрибуту recurring_amount сразу после старта
+recurring_amount = 19.99
+→ Трек 1 Week
+recurring_amount = 39.99
+→ Трек 4 Weeks
+recurring_amount = 79.99
+→ Трек 12 Weeks
+Exit condition
+Purchase — купил challenge → выход из воронки
+Re-entry
+Not allowed (повторная покупка подписки = новая воронка)
+
+
+
+Трек 1 Week — 3 письма
+1 Week
+Urgency максимальная — 7 дней. Нужно сразу показать ценность и предложить assessment.
+€19.99
+7 дней
+
+1W-1
+День 0 — сразу после покупки
+День 0 — сразу после покупки
+Subject
+Your Academy is live — here's your plan for 7 days
+Preheader
+7 days of full access. Real traders, real courses, real homework.
+
+Текст письма
+Hi {{first_name}},
+
+Your Sabio Academy subscription is active. Here's what you've just unlocked — and why it's different from most trading education you've seen.
+
+What SabioTrade is:
+
+We're a prop trading firm. The model is simple: we provide capital, you provide the skill. Traders who pass our assessment — proving they can hit 10% profit while managing risk — get access to funded accounts of up to $1,000,000 and keep up to 90% of every payout.
+
+The Academy exists to close the gap between where you are now and where you need to be to get funded.
+
+What's inside your subscription:
+
+	•	Courses from real prop traders — Wieland Arlt, Markus Gabel, Oleg Prischepa, Frank Sohllender and others. People who are actively managing capital. They teach what they actually do.
+	•	Homework assignments — every lesson comes with a practical task. The traders who complete the homework are the ones who actually change how they trade.
+	•	Mentoring sessions — 1-on-1 with Sabio mentors. Review your homework, your demo sessions, your specific questions before the challenge.
+	•	Closed webinars — live sessions with in-house and guest experts.
+	•	Free trading strategies — tested and used by our team. Ready to apply in Traderoom.
+	•	Trading community — traders at different stages, sharing what's working and what isn't.
+
+One important thing:
+
+This is a live product. We add courses, update content, and take requests seriously. If there's a topic missing that you need — reply to this email and tell us. We read everything and we build based on what traders actually need.
+
+7 days goes fast. Here's the most direct path:
+
+Start today — 13 minutes:
+
+Lesson 1 of "From Challenge to Funded: Lessons from a $2M+ Manager" — "Self-Assessment: Your Stage and Trading Psychology."
+
+It uses the Dunning-Kruger framework to help you identify where you actually are as a trader — not where you think you are. Every course and strategy recommendation after this becomes more relevant once you know your stage.
+
+It comes with a homework assignment. Do it.
+
+→ Watch Lesson 1 now (13 min)
+sabiotrade.com/education/courses/from-challenge-to-funded-lessons-from-a-2m-manager/self-assessment-your-stage-and-trading-psychology
+
+Your 7-day plan:
+	•	Days 1–2: "From Challenge to Funded" — 4 lessons with homework
+	•	Days 3–4: "How to Be Successful in Prop Trading" — Chapters 4–7
+	•	Days 5–6: 3 demo sessions applying what you've learned
+	•	Day 7: Decide if you're ready to start a challenge
+
+Any questions — just reply. We read everything.
+
+— The SabioTrade Team
+
+
+1W-2
+День 3
+День 3
+Subject
+Halfway through your week — have you done the homework?
+Preheader
+One assignment. 30 minutes. Changes how you approach the challenge.
+
+Текст письма
+Hi {{first_name}},
+
+Three days in — you're at the halfway point.
+
+Quick check: have you completed the homework from Lesson 1 of "From Challenge to Funded"?
+
+It's not busywork. The assignment asks you to observe decision-making under pressure through a specific film — then apply what you see to trading situations. It makes the rules of the challenge make sense at a gut level, not just intellectually.
+
+If you haven't started yet — Lesson 1 is 13 minutes, and the homework takes about 30 minutes after.
+
+→ Start here
+sabiotrade.com/education/courses/from-challenge-to-funded-lessons-from-a-2m-manager/self-assessment-your-stage-and-trading-psychology
+
+Also: mentoring sessions are available.
+
+If you've been going through the courses and want feedback on your specific situation — book a 1-on-1 session. Mentors will look at your trading style, the stage you identified in Lesson 1, and tell you exactly which plan and approach makes sense for you.
+
+→ Book a mentoring session — top right at sabiotrade.com/education
+
+Ready to put theory to work?
+
+The Essential challenge is €119. You've already spent €19.99 on theory. The challenge is where that learning turns into a funded account.
+
+→ Start Essential — €119
+→ Plus $50K — €289
+
+— The SabioTrade Team
+
+
+1W-3
+День 6 — за 1 день до окончания
+День 6 — за 1 день до окончания
+Subject
+Your Academy access ends tomorrow — two options
+Preheader
+Don't let it expire without a plan.
+
+Текст письма
+Hi {{first_name}},
+
+Your 7-day Academy access ends tomorrow.
+
+Option 1 — Keep learning:
+
+Upgrade to 4 Weeks for €39.99. Four more weeks of full access — all courses, homework checks, mentoring sessions, closed webinars, and the trading community. That's where most traders build the habits that actually stick.
+
+→ Upgrade to 4 Weeks — €39.99
+
+Option 2 — Start the challenge:
+
+If you've gone through the courses and you feel ready — this is the moment. The Essential challenge is €119 and has no time limit. Everything you've learned in the Academy applies from your first session.
+
+→ Start Essential — €119
+→ Plus $50K — €289
+
+Not sure which option is right for you? Reply to this email — tell us where you are in the courses and we'll give you an honest recommendation.
+
+— The SabioTrade Team
+
+
+
+Трек 4 Weeks — 4 письма
+4 Weeks
+Есть время выстроить привычку. Апселл в assessment — ближе к концу подписки.
+€39.99
+28 дней
+
+4W-1
+День 0
+День 0
+Subject
+Your Academy is active — your 4-week plan starts now
+Preheader
+4 weeks of real courses, homework, mentors, and community.
+
+Текст письма
+Hi {{first_name}},
+
+Your Sabio Academy subscription is active. Here's what you've just unlocked — and why it's different from most trading education you've seen.
+
+What SabioTrade is:
+
+We're a prop trading firm. The model is simple: we provide capital, you provide the skill. Traders who pass our assessment — proving they can hit 10% profit while managing risk — get access to funded accounts of up to $1,000,000 and keep up to 90% of every payout.
+
+The Academy exists to close the gap between where you are now and where you need to be to get funded.
+
+What's inside your subscription:
+
+	•	Courses from real prop traders — Wieland Arlt, Markus Gabel, Oleg Prischepa, Frank Sohllender and others. People who are actively managing capital. They teach what they actually do.
+	•	Homework assignments — every lesson comes with a practical task. The traders who complete the homework are the ones who actually change how they trade.
+	•	Mentoring sessions — 1-on-1 with Sabio mentors. Review your homework, your demo sessions, your specific questions before the challenge.
+	•	Closed webinars — live sessions with in-house and guest experts.
+	•	Free trading strategies — tested and used by our team. Ready to apply in Traderoom.
+	•	Trading community — traders at different stages, sharing what's working and what isn't.
+
+One important thing:
+
+This is a live product. We add courses, update content, and take requests seriously. If there's a topic missing that you need — reply to this email and tell us. We read everything and we build based on what traders actually need.
+
+4 weeks is enough time to go from "understanding what prop trading is" to "ready for your first challenge" — if you're structured about it.
+
+Week 1 — Understand yourself as a trader:
+
+Start with "From Challenge to Funded: Lessons from a $2M+ Manager." Lesson 1 is a self-assessment based on the Dunning-Kruger framework — it tells you which of four trader development stages you're actually at. Each of the 4 lessons includes a homework assignment. Complete them all.
+
+→ Start Lesson 1 (13 min)
+sabiotrade.com/education/courses/from-challenge-to-funded-lessons-from-a-2m-manager/self-assessment-your-stage-and-trading-psychology
+
+Week 2 — Build your risk framework:
+"How to Be Successful in Prop Trading" by Frank Sohllender. Chapters 4–7: mistakes in strategy, risk, psychology, and discipline.
+
+Week 3 — Find and test your strategy:
+"From Beginner to Pro: 9 Strategies" by Oleg Prischepa. Pick 2 strategies. Test them in demo under assessment conditions.
+
+Week 4 — Dress rehearsal:
+5 demo sessions following challenge rules exactly. Review each one. Then decide.
+
+One request: after Lesson 1 — reply and tell us which trader development stage you identified. We'll send you a tailored course recommendation.
+
+— The SabioTrade Team
+
+
+4W-2
+День 5
+День 5
+Subject
+5 days in — one thing worth doing this week
+Preheader
+Most traders skip this. The ones who pass the challenge don't.
+
+Текст письма
+Hi {{first_name}},
+
+Five days in. One thing worth prioritising this week:
+
+Book a mentoring session.
+
+You have full access to 1-on-1 sessions with Sabio mentors — traders who've managed real prop accounts. They can review your homework, look at where you are in the Dunning-Kruger framework from Lesson 1, and tell you specifically: which plan makes sense for you, which strategy fits your style, what to fix before you start your first challenge.
+
+Most traders who book a session in the first two weeks get more out of the remaining time than traders who go through the courses alone.
+
+→ Book a mentoring session — top right at sabiotrade.com/education
+
+Also — if you've started "From Challenge to Funded", Lesson 2 is "Decision-Making in Trading: How Traders Choose When to Act." It's the bridge between knowing the rules and following them under pressure.
+
+→ Continue the course
+sabiotrade.com/education/courses/from-challenge-to-funded-lessons-from-a-2m-manager
+
+Questions about which course to prioritise? Just reply here.
+
+— The SabioTrade Team
+
+
+4W-3
+День 14 — середина подписки
+День 14 — середина подписки
+Subject
+2 weeks in — are you practicing under real conditions?
+Preheader
+The habit that separates funded traders from the rest.
+
+Текст письма
+Hi {{first_name}},
+
+Two weeks in. Halfway through your subscription.
+
+The one thing that separates traders who pass their first challenge from those who don't: they practice under assessment conditions before paying for one.
+
+That means: position sizing capped at 0.5% per trade, daily loss limit awareness, a stop-loss on every trade, and a post-session review.
+
+Here's the practical homework: run 3 sessions this week. After each one, answer:
+	•	Did any position exceed 0.5% of account balance?
+	•	Did I trade during news without a hard stop?
+	•	What would have happened if this was a real challenge?
+
+This review process is the most valuable thing you can build before spending €119.
+
+Need feedback on your sessions?
+
+Our mentors can review your demo trading directly — specific trades, specific decisions. Reply to this email or book a session.
+
+→ Book a mentoring session — top right at sabiotrade.com/education
+
+When you feel ready:
+→ Start Essential — €119
+→ Plus $50K — €289
+
+— The SabioTrade Team
+
+
+4W-4
+День 25 — за 3 дня до окончания
+День 25 — за 3 дня до окончания
+Subject
+3 days until your subscription ends — what's next?
+Preheader
+Two paths. Here's how to choose honestly.
+
+Текст письма
+Hi {{first_name}},
+
+Your 4-week Academy subscription ends in 3 days.
+
+An honest question: what did you actually do with it?
+
+If you went through the courses and completed the homework:
+
+You're ready. Not perfect — ready. The Essential challenge is €119 and has no time limit. Start it while your Academy access is still active so you can still use the mentors if something comes up.
+
+→ Start Essential — €119
+→ Plus $50K — €289
+
+If you started but didn't finish:
+
+The 12-week plan is €79.99. Three months of full access — new courses being added, live webinars, mentoring, and the closed community.
+
+→ Upgrade to 12 Weeks — €79.99
+
+Not sure? Reply to this email. Tell us where you got to and what's holding you back. We'll give you a straight answer.
+
+— The SabioTrade Team
+
+
+
+Трек 12 Weeks — 8 писем
+12 Weeks
+Самый длинный онбординг. 8 писем — равномерное покрытие всего периода с постепенным усилением призыва к assessment.
+€79.99
+84 дня
+
+12W-1
+День 0
+День 0
+Subject
+Your 12-week Academy starts now
+Preheader
+3 months. Real traders. Real homework. A funded account at the end.
+
+Текст письма
+Hi {{first_name}},
+
+Your Sabio Academy subscription is active. Here's what you've just unlocked — and why it's different from most trading education you've seen.
+
+What SabioTrade is:
+
+We're a prop trading firm. The model is simple: we provide capital, you provide the skill. Traders who pass our assessment — proving they can hit 10% profit while managing risk — get access to funded accounts of up to $1,000,000 and keep up to 90% of every payout.
+
+The Academy exists to close the gap between where you are now and where you need to be to get funded.
+
+What's inside your subscription:
+
+	•	Courses from real prop traders — Wieland Arlt, Markus Gabel, Oleg Prischepa, Frank Sohllender and others. People who are actively managing capital. They teach what they actually do.
+	•	Homework assignments — every lesson comes with a practical task. The traders who complete the homework are the ones who actually change how they trade.
+	•	Mentoring sessions — 1-on-1 with Sabio mentors. Review your homework, your demo sessions, your specific questions before the challenge.
+	•	Closed webinars — live sessions with in-house and guest experts.
+	•	Free trading strategies — tested and used by our team. Ready to apply in Traderoom.
+	•	Trading community — traders at different stages, sharing what's working and what isn't.
+
+One important thing:
+
+This is a live product. We add courses, update content, and take requests seriously. If there's a topic missing that you need — reply to this email and tell us. We read everything and we build based on what traders actually need.
+
+Three months is enough time to go from wherever you are now to funded — if you're structured about it.
+
+Month 1 — Foundation:
+
+Start with "From Challenge to Funded: Lessons from a $2M+ Manager" — 4 lessons, ~2 hours, each with a homework assignment. This course maps the entire journey from buying a challenge to your first payout — including the psychological traps that end most attempts early.
+
+→ Start Lesson 1 (13 min, self-assessment)
+sabiotrade.com/education/courses/from-challenge-to-funded-lessons-from-a-2m-manager/self-assessment-your-stage-and-trading-psychology
+
+Then: "How to Be Successful in Prop Trading" — Chapters 1–7.
+
+Month 2 — Strategy:
+"From Beginner to Pro: 9 Strategies" + "From Zero to Hero" by Markus Gabel. Find 2 strategies that fit your style. Test them under assessment conditions in demo.
+
+Month 3 — Application:
+10+ demo sessions under real challenge rules. Book a mentoring session for a final review. Then start your first challenge.
+
+One request: after Lesson 1 — reply and tell us which trader development stage you identified. We'll put together a personalised course path for your 12 weeks.
+
+And remember: if there's a course topic you'd like that isn't there yet — tell us. We build based on what traders actually need.
+
+— The SabioTrade Team
+
+
+12W-2
+День 7
+День 7
+Subject
+Week 1 done — the homework question
+Preheader
+Did you do it? Here's why it matters more than the lesson itself.
+
+Текст письма
+Hi {{first_name}},
+
+One week in.
+
+Quick question: did you complete the homework from Lesson 1 of "From Challenge to Funded"?
+
+The assignment involves watching a specific film and analysing decision-making under pressure — then mapping what you observe to trading situations. It takes about 30 minutes and it changes how you think about entering a trade, not just what you think.
+
+The traders who skip the homework and just watch the video get the theory. The traders who do the homework start building the instinct.
+
+→ Continue from where you left off
+sabiotrade.com/education/courses/from-challenge-to-funded-lessons-from-a-2m-manager
+
+Also: mentoring sessions are available.
+
+If you want feedback on your homework, a second opinion on which courses to prioritise, or just want to talk through where you are — book a 1-on-1 session.
+
+→ Book a session — top right at sabiotrade.com/education
+
+Any questions — reply to this email. We're here.
+
+— The SabioTrade Team
+
+
+12W-3
+День 21 — 3 недели
+День 21 — 3 недели
+Subject
+3 weeks in — time to open your first practice trade
+Preheader
+Theory is ready. This is the bridge to the real thing.
+
+Текст письма
+Hi {{first_name}},
+
+Three weeks in. If you've been following the course plan — you've built more foundation than most traders who've already started their first paid challenge.
+
+Now it's time to use it.
+
+This week: your first demo session under assessment conditions.
+
+Open your Traderoom. Pick one asset. One position at 0.01 lot. Set a stop-loss before you enter. Close it. Then write down:
+	•	What did I feel before I clicked?
+	•	Did I follow my entry criteria?
+	•	Was the stop-loss placement based on logic or what I could afford to lose?
+
+This review after the trade is more valuable than the trade itself.
+
+Want a mentor to review your first sessions?
+
+Come with your trade log and review answers after 3 demos. The feedback will be specific to your actual decisions.
+
+→ Book a mentoring session — top right at sabiotrade.com/education
+
+Any questions — reply here.
+
+— The SabioTrade Team
+
+
+12W-4
+День 35 — midpoint check
+День 35 — midpoint check
+Subject
+5 weeks in — midpoint check
+Preheader
+You're past the halfway point of Month 1. Here's an honest look at where you should be.
+
+Текст письма
+Hi {{first_name}},
+
+Five weeks in. Here's an honest check against the plan:
+
+If you're on track:
+By now you've finished "From Challenge to Funded" — all 4 lessons and homework — and you're somewhere in Chapters 1–7 of "How to Be Successful in Prop Trading."
+
+This week: open "From Beginner to Pro: 9 Strategies" by Oleg Prischepa. Find 2 strategies that feel most natural and start testing them in demo.
+
+→ sabiotrade.com/education/courses/from-beginner-to-pro-9-strategies-to-achieve-a-million
+
+If you're behind:
+You have 7 weeks left. That's still enough time — but it's not enough time to keep postponing the start.
+
+Pick one thing to do today: open one lesson, complete one homework, or book one mentoring session.
+
+The first assessment question:
+
+How do you know when you're ready to start the challenge? When you can answer yes to:
+	•	Do I have a clear entry and exit rule for at least one strategy?
+	•	Do I know how to calculate 0.5% position size for my account?
+	•	Have I had at least one demo session where I followed my rules for the entire session?
+
+If yes to all three — you're ready. The challenge will teach you the rest.
+
+→ Start Essential — €119
+→ Plus $50K — €289
+
+Questions? Reply here.
+
+— The SabioTrade Team
+
+
+12W-5
+День 49 — 7 недель
+День 49 — 7 недель
+Subject
+7 weeks in — direct question
+Preheader
+What's actually stopping you from starting the challenge?
+
+Текст письма
+Hi {{first_name}},
+
+Seven weeks into your 12-week subscription.
+
+Direct question: have you started a challenge yet?
+
+If yes — great. Skip this email.
+
+If not — what's stopping you?
+
+"I don't feel ready."
+You know more now than most traders who've passed their first challenge. Feeling ready comes from doing the challenge, not from more preparation.
+
+"I'm worried about the €119."
+Fair. PRO 3 gives you 3 separate accounts for €259 — less pressure on any single attempt. Or reply and tell us your situation — we'll help figure out which plan makes sense.
+
+"I want to practice more first."
+Good instinct. Run 5 more demo sessions under challenge rules this week. Then book a mentoring session and ask directly: "Am I ready?" You'll get an honest answer.
+
+You have 5 weeks of subscription left. Use them to go into the challenge prepared — not to stay comfortable.
+
+→ Start Essential — €119
+→ Plus $50K — €289
+
+Or reply and tell us where you are. We'll help you figure out the next step.
+
+— The SabioTrade Team
+
+
+12W-6
+День 63 — 9 недель
+День 63 — 9 недель
+Subject
+9 weeks in — at some point demo becomes avoidance
+Preheader
+You've been preparing long enough. Here's what the data shows.
+
+Текст письма
+Hi {{first_name}},
+
+Nine weeks into your 12-week subscription.
+
+Something worth saying directly:
+
+The traders on our leaderboard — almost none of them spent more than 6 weeks preparing before their first challenge. Not because they were more talented. Because they understood something important:
+
+Demo trading and real trading are different psychological experiences.
+
+You can spend 12 weeks getting your strategy perfect on demo and still freeze on your first real trade. The only thing that fixes that is a real trade.
+
+At 9 weeks, you have enough theory. You have enough demo sessions. The preparation is done.
+
+The question now is different: are you waiting to feel ready — or are you ready but waiting to feel it?
+
+Those are not the same thing. Feeling ready comes after you start, not before.
+
+If there's still a specific thing you're not sure about — book a mentoring session this week and get it answered. Then start.
+
+→ Book a session — top right at sabiotrade.com/education
+
+→ Start Essential — €119
+→ Plus $50K — €289
+→ PRO 3 — 3 accounts + 3 months Academy — €259
+
+Reply if you want to talk through it. We'll give you a straight answer.
+
+— The SabioTrade Team
+
+
+12W-7
+День 70 — за 2 недели до окончания
+День 70 — за 2 недели до окончания
+Subject
+2 weeks left — one practical suggestion
+Preheader
+Not a pitch. A practical reason to start now.
+
+Текст письма
+Hi {{first_name}},
+
+Two weeks left in your 12-week subscription.
+
+One practical suggestion — not a pitch:
+
+Start your first challenge before the subscription ends.
+
+Here's why it's worth doing while you still have access:
+
+When something happens in your first challenge — a session where you're down 3%, a news event that moves against you, a moment where you're not sure whether to hold or close — you can book a mentoring session that day and talk it through with someone who's been there.
+
+Once the subscription ends, that resource is gone unless you renew or upgrade.
+
+Starting the challenge while Academy access is active means you have real-time support for the hardest part of the process — the first 10 sessions.
+
+→ Start Essential — €119 (no time limit on the challenge)
+→ Plus $50K — €289
+→ PRO 3 — 3 accounts + 3 months Academy included — €259
+
+Questions? Reply here. Two weeks is enough time to make a good decision.
+
+— The SabioTrade Team
+
+
+12W-8
+День 77 — за 7 дней до окончания
+День 77 — за 7 дней до окончания
+Subject
+Your Academy subscription ends in 7 days
+Preheader
+What you've built stays. Access doesn't.
+
+Текст письма
+Hi {{first_name}},
+
+Your 12-week subscription ends in 7 days.
+
+Three months of full access. Courses, homework, mentoring, webinars, community.
+
+Before it ends — three things:
+
+1. Complete any open homework assignments.
+You won't be able to submit new homework once the subscription ends. If you have unfinished assignments — this week is the time.
+
+2. Book a final mentoring session.
+Even one session right now — where you ask directly "am I ready for the challenge?" — is worth more than another week of solo study. Come with your demo trade log.
+
+→ Book now — top right at sabiotrade.com/education
+
+3. Make a decision.
+
+If you've spent 12 weeks in the Academy and haven't started a challenge yet — ask yourself honestly: what else are you waiting to learn?
+
+At some point, preparation becomes avoidance. The knowledge you have now is enough to start. The challenge will teach you the rest.
+
+→ Start Essential — €119 (no time limit)
+→ Plus $50K — €289
+→ PRO 3 — 3 accounts + 3 months Academy — €259
+
+Or if you want to keep learning — renew at €79.99.
+
+Not sure? Reply to this email. Tell us where you are. We'll give you a straight answer.
+
+— The SabioTrade Team
+
+
+
+Событийные письма — 7 триггеров
+Отправляются по конкретным событиям независимо от трека подписки.
+
+3 события нужно создать на бэкенде: Academy_Course_Started, Academy_Homework_Submitted, обновление latest_activity_date при активности в Academy.
+
+
+#
+Событие
+Есть сейчас
+Delay
+Цель
+1
+Certificate_Issued
+✅ 119/нед
+Нет
+Перевести в assessment пока мотивация на пике
+2
+Education_Webinar_View
+✅ 13/нед
+1 день
+Перевести теорию в практическое действие
+3
+charge.failed
+✅ 52/нед
+Нет
+Починить платёж до потери доступа
+4
+subscription.canceled
+✅
+1 час
+Фидбек + мягкий winback
+5
+Academy_Course_Started
+❌ создать
+2 дня
+Объяснить важность домашки
+6
+7 дней без активности
+❌ через тег
+Ежедневно
+Вернуть в Academy
+7
+Academy_Homework_Submitted
+❌ создать
+Нет
+Подтвердить + следующий шаг
+
+
+Событие 1
+Certificate_Issued — курс завершён
+Certificate_Issued — курс завершён
+Subject
+You completed "{{course_title}}" — here's what's next
+Preheader
+Certificate earned. Now let's put it to work.
+
+Текст письма
+Hi {{first_name}},
+
+You completed **{{course_title}}**. That's not nothing — most people who start a course don't finish it.
+
+Your certificate is attached to this email and available in your Academy profile.
+
+What to do next:
+
+Completing a course means you have the theory. The next step is always the same: apply it.
+
+If you haven't started practicing in demo yet — this is the moment. Open Traderoom, pick one asset, and run a session using what you just learned. It doesn't need to be perfect. It needs to happen.
+
+If you have been practicing — you're closer to being ready for a real challenge than you think.
+
+What to study next:
+
+Not sure which course to take after this one? Reply to this email and tell us which course you just completed — we'll tell you exactly what to do next.
+
+Or book a mentoring session for a personalised recommendation.
+
+→ Book a session — top right at sabiotrade.com/education
+
+When you're ready for the real thing:
+→ Start Essential — €119 (no time limit)
+→ Plus $50K — €289
+
+— The SabioTrade Team
+
+
+Событие 2
+Education_Webinar_View — посмотрел вебинар (delay 1 день)
+Education_Webinar_View — посмотрел вебинар (delay 1 день)
+Subject
+Glad you watched — here's what to do with it
+Preheader
+A webinar is theory. Here's how to make it practical.
+
+Текст письма
+Hi {{first_name}},
+
+You watched one of our webinars. Good.
+
+Now the question that separates traders who improve from those who don't: what are you going to do with what you just heard?
+
+The most common answer is "nothing specific" — the webinar was interesting, maybe you took some notes, and then life moved on.
+
+The traders who get funded do something different. They pick one thing from the session and test it in demo within 48 hours. Just one thing. One entry signal. One risk rule. One psychological framework.
+
+What to do right now:
+
+Pick the single most useful idea from the webinar. Write it down as a rule: "I will [specific action] when [specific condition]." Then test it in one demo session.
+
+If you want feedback on how you applied it — book a mentoring session and bring the trade log.
+
+→ Book a session — top right at sabiotrade.com/education
+
+Also: if the webinar covered a topic you want to go deeper on, there's likely a full course in the Academy covering the same material — with homework assignments and a certificate.
+
+→ Explore courses: sabiotrade.com/education/courses
+
+Any questions — reply here.
+
+— The SabioTrade Team
+
+
+Событие 3
+charge.failed — не прошёл платёж (сразу)
+charge.failed — не прошёл платёж (сразу)
+Subject
+Your Academy payment didn't go through
+Preheader
+Your access is still active — but here's what to check.
+
+Текст письма
+Hi {{first_name}},
+
+We tried to renew your Academy subscription ({{recurring_amount}}) and the payment didn't go through.
+
+Your access is still active until **{{current_period_end_at}}**. After that, it will pause automatically until the payment is resolved.
+
+Three things to check:
+
+	•	Card expired? If your card has a new expiry date or number, update it in your account settings.
+	•	Insufficient funds? Check that the account linked to your payment method has sufficient balance.
+	•	Bank blocked the charge? Some banks flag recurring payments. A quick call to your bank usually resolves it.
+
+→ Update your payment method: sabiotrade.com → Account → Billing
+
+If you've updated your details and want us to retry the charge — reply to this email and we'll process it manually.
+
+Why it's worth sorting out:
+
+You're in the middle of your Academy access — course progress, homework submissions, and mentor session history are all saved. Sorting this out takes 2 minutes and keeps everything intact.
+
+— The SabioTrade Team
+
+
+Событие 4
+subscription.canceled — отменил подписку (delay 1 час)
+subscription.canceled — отменил подписку (delay 1 час)
+Subject
+You cancelled your Academy subscription — one question
+Preheader
+No hard feelings. Just want to understand.
+
+Текст письма
+Hi {{first_name}},
+
+Your Sabio Academy subscription has been cancelled. Your access remains active until the end of the current billing period.
+
+One question — genuinely useful for us, not a retention tactic:
+
+Why did you cancel?
+
+Just reply to this email with a few words. Common answers we hear:
+	•	"Didn't have time to use it"
+	•	"Too expensive right now"
+	•	"Found what I needed, don't need more"
+	•	"The content wasn't what I expected"
+	•	"Buying the challenge instead"
+
+Every answer helps us build a better product. And if the reason is something we can fix — we'd rather know.
+
+If you cancelled because of the price:
+The 1-week plan is €19.99. If you want to keep access to a specific course or mentor session without committing to a full month — that's an option.
+
+→ Resubscribe from €19.99
+
+If you cancelled because you're ready for the challenge:
+That's the best reason. Your Academy knowledge goes with you into your first session.
+
+→ Start Essential — €119
+→ Plus $50K — €289
+
+Either way — good luck with your trading.
+
+— The SabioTrade Team
+
+
+⚠️  Событие 5, 6, 7 — нужно создать на бэкенде. Настройки указаны ниже.
+
+Событие 5
+Academy_Course_Started — старт курса (delay 2 дня, атрибут: course_title)
+Academy_Course_Started — старт курса (delay 2 дня, атрибут: course_title)
+Subject
+You started "{{course_title}}" — one tip for the first lesson
+Preheader
+The homework matters more than the video. Here's why.
+
+Текст письма
+Hi {{first_name}},
+
+You've started **{{course_title}}**.
+
+One thing worth knowing before you get into it:
+
+The homework assignments in each lesson are not optional extras. They're the point.
+
+The video gives you the framework. The homework makes it yours. Traders who complete the assignments consistently report that their demo sessions change noticeably — not because they watched something, but because they did something.
+
+So: when you finish each lesson, do the homework before you open the next one.
+
+**If something in the course isn't clear** — or if you want a second opinion on how to apply a concept to your specific trading style — that's what mentoring sessions are for.
+
+→ Book a session — top right at sabiotrade.com/education
+
+And if you have a question that can't wait — reply to this email.
+
+— The SabioTrade Team
+
+
+Событие 6
+7 дней без активности в Academy — через тег latest_activity_date
+7 дней без активности в Academy — через тег latest_activity_date
+Subject
+We haven't seen you in Academy for a week
+Preheader
+Your courses are waiting. 10 minutes is enough to keep the momentum.
+
+Текст письма
+Hi {{first_name}},
+
+It's been about a week since your last session in the Academy.
+
+That's completely normal — life gets busy. But subscriptions have a way of going from "I'll get back to it" to "that was a waste of money" faster than expected.
+
+Here's a low-commitment way to get back in:
+
+Open the course you were last working on. Watch one lesson. That's it.
+
+Not a homework assignment. Not a full session. Just one lesson. 10–15 minutes. It keeps the thread alive.
+
+→ Pick up where you left off: sabiotrade.com/education/library
+
+Your Library shows everything you've been working on — with progress saved exactly where you left it.
+
+**Not sure which course to focus on** — or if your goals have shifted — reply to this email and tell us where you are. We'll point you in the right direction.
+
+Or book a quick mentoring session. Sometimes 30 minutes with a mentor is more useful than a week of solo studying.
+
+→ sabiotrade.com/education → "Book a mentoring session"
+
+— The SabioTrade Team
+
+
+Событие 7
+Academy_Homework_Submitted — сдал домашнее задание (сразу, атрибуты: course_title, lesson_title)
+Academy_Homework_Submitted — сдал домашнее задание (сразу, атрибуты: course_title, lesson_title)
+Subject
+Homework received — here's what happens next
+Preheader
+You submitted it. Most people don't. That already puts you ahead.
+
+Текст письма
+Hi {{first_name}},
+
+We received your homework for **{{lesson_title}}**.
+
+Our team reviews every submission — you'll get feedback within 2 business days. The feedback is specific to what you wrote, not generic comments.
+
+While you wait:
+
+Don't stop moving. Open the next lesson — the concepts build on each other and waiting for feedback before continuing slows down the whole process. When the feedback arrives, you'll be able to apply it immediately.
+
+**If your submission raised a specific question** you want to discuss in more depth — that's exactly what mentoring sessions are for. Book a session and bring the homework topic.
+
+→ Book a session — top right at sabiotrade.com/education
+
+One thing worth noting:
+
+Traders who complete the homework consistently pass the assessment at a higher rate than those who skip it. Not because the homework is magic — but because doing it means you've actually tested the concept, not just heard it.
+
+You're building the right habits.
+
+— The SabioTrade Team
+
+
+
+Что попросить бэкенд: 1) Academy_Course_Started (атрибуты: course_slug, course_title) 2) Academy_Homework_Submitted (атрибуты: course_slug, course_title, lesson_title, homework_id) 3) Подтвердить: обновляется ли latest_activity_date при активности в Academy или только в Traderoom.
+
+Academy Subscription Onboarding  ·  SabioTrade  ·  Апрель 2026

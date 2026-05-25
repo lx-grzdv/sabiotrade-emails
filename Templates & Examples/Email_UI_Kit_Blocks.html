@@ -1,0 +1,1265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SabioTrade Email UI Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <style type="text/css">
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+
+      body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        font-family: "Inter", Helvetica, sans-serif;
+        background: #f9f9fc;
+      }
+
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+
+      img {
+        border: 0;
+        line-height: 100%;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      table {
+        border-collapse: separate !important;
+        border-spacing: 0;
+      }
+
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      b,
+      strong {
+        font-weight: bold !important;
+      }
+
+      @media screen and (max-width: 525px) {
+        .wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .center {
+          text-align: center !important;
+        }
+        .two-columns .column {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: block !important;
+        }
+        .header-logo,
+        .header-cta {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          text-align: center !important;
+        }
+        .header-logo {
+          padding: 0 0 16px !important;
+        }
+        .mobile-block {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0 !important; padding: 0 !important; background: #f9f9fc; font-family: Inter, Helvetica, sans-serif">
+    <!--
+      SABIOTRADE EMAIL UI KIT
+      1) Duplicate this file to create a new email.
+      2) Keep BLOCK 01, BLOCK 02, and BLOCK 10 in every email.
+      3) Mix BLOCK 03..BLOCK 30 in any order.
+      4) Replace all {{TOKENS}} before send.
+    -->
+
+    <!-- BLOCK 00: Hidden preheader -->
+    <div style="font-size: 0; color: #262119; line-height: 1px; mso-line-height-rule: exactly; display: none; max-width: 0; max-height: 0; opacity: 0; overflow: hidden; mso-hide: all; font-family: Inter, Helvetica, sans-serif">
+      {{PREHEADER_TEXT}}
+    </div>
+
+    <center style="width: 100%; table-layout: fixed; padding: 0">
+      <div bgcolor="#F9F9FC" style="background-color: #f9f9fc">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 604px; margin: 0 auto; font-family: Inter, Helvetica, sans-serif" align="center">
+          <tr>
+            <td style="padding: 0 12px">
+              <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!-- BLOCK 01: Header -->
+                <tr>
+                  <td align="center" style="font-size: 0; padding: 16px 0 24px" class="two-columns">
+                    <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td valign="middle" class="header-logo" style="vertical-align: middle; padding: 0 18px 0 0">
+                          <table align="left" role="presentation" style="max-width: 320px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td>
+                                <a href="{{LOGO_URL}}" target="_blank" rel="noopener">
+                                  <img src="{{LOGO_IMAGE}}" border="0" alt="{{LOGO_ALT}}" style="display: block; border: 0; width: 320px; max-width: 100%; height: auto" width="320" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="middle" class="header-cta" style="vertical-align: middle">
+                          <table align="right" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="vertical-align: middle; white-space: nowrap">
+                                <a href="{{HEADER_LINK_URL}}" target="_blank" rel="noopener" style="font-weight: normal; font-size: 14px; line-height: 21px; color: #1c1e4e; text-decoration: none; white-space: nowrap">
+                                  <span style="vertical-align: middle">{{HEADER_LINK_TEXT}}</span>
+                                  <img src="{{HEADER_LINK_ICON}}" border="0" alt="" style="border: 0; width: 24px; vertical-align: middle" width="24" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 02: Hero (colored) -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#484FFF" style="padding: 40px 32px 0; background-color: #484fff; border-radius: 32px 32px 0 0">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 500px">
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <strong style="margin: 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #ffffff">{{HERO_KICKER}}</strong>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <h1 style="margin: 0; font-weight: bold; font-size: 40px; line-height: 50px; color: #ffffff">{{HERO_TITLE}}</h1>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #ffffff">{{HERO_TEXT}}</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#484FFF" align="center" style="background-color: #484fff; border-radius: 0 0 32px 32px; overflow: hidden">
+                          <img src="{{HERO_IMAGE}}" width="516" border="0" alt="{{HERO_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 100%; height: auto; margin: 0" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 03: Info card (light background) -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px; background-color: #d7e5ff; border-radius: 32px">
+                      <tr>
+                        <td style="padding: 32px 24px">
+                          <h2 style="margin: 0 0 12px; font-weight: bold; font-size: 30px; line-height: 34px; color: #1358ff; text-align: center">{{SECTION_TITLE}}</h2>
+                          <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36; text-align: center">{{SECTION_TEXT}}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 04: Single feature card -->
+                <tr>
+                  <td style="padding: 0 0 16px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#FFFFFF" style="padding: 24px 24px 0; background-color: #ffffff; border-radius: 24px; overflow: hidden">
+                          <h3 style="margin: 0 0 8px; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff">{{CARD_TITLE}}</h3>
+                          <p style="margin: 0 0 20px; font-weight: normal; font-size: 16px; line-height: 23px; color: #000b36">{{CARD_TEXT}}</p>
+                          <img src="{{CARD_IMAGE}}" width="532" border="0" alt="{{CARD_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 532px; height: auto; margin: 0; border-radius: 0 0 24px 24px" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 05: Two-column cards -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; table-layout: fixed">
+                      <tr>
+                        <td class="mobile-block" width="50%" valign="top" style="width: 50%; vertical-align: top; padding: 0 8px 0 0">
+                          <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td bgcolor="#FFFFFF" valign="top" style="background-color: #ffffff; border-radius: 24px; padding: 24px 0 0 24px; overflow: hidden">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td style="padding: 0 24px 8px 0">
+                                      <h3 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 33px; color: #1358ff">{{LEFT_CARD_TITLE}}</h3>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 0 24px 16px 0">
+                                      <p style="margin: 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #000b36">{{LEFT_CARD_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" style="line-height: 0; font-size: 0">
+                                      <img src="{{LEFT_CARD_IMAGE}}" width="260" border="0" alt="{{LEFT_CARD_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 260px; height: auto" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="mobile-block" width="50%" valign="top" style="width: 50%; vertical-align: top; padding: 0 0 0 8px">
+                          <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td bgcolor="#FFFFFF" valign="top" style="background-color: #ffffff; border-radius: 24px; padding: 24px; overflow: hidden">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td style="padding: 0 0 8px">
+                                      <h3 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 33px; color: #1358ff">{{RIGHT_CARD_TITLE}}</h3>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 0 0 16px">
+                                      <p style="margin: 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #000b36">{{RIGHT_CARD_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="line-height: 0; font-size: 0">
+                                      <img src="{{RIGHT_CARD_IMAGE}}" width="230" border="0" alt="{{RIGHT_CARD_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 230px; height: auto; margin: 0 auto" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 06: CTA button (full width) -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td style="padding: 0">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%">
+                            <tr>
+                              <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                <a href="{{CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff; text-align: center; text-decoration: none; white-space: nowrap">
+                                  {{CTA_TEXT}}
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 07: Split promo (text + image) -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px; background-color: #484fff; border-radius: 32px">
+                      <tr>
+                        <td style="padding: 32px 24px">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; table-layout: fixed">
+                            <tr>
+                              <td class="mobile-block" valign="top" width="52%" style="width: 52%; vertical-align: top; padding: 0 16px 0 0">
+                                <p style="margin: 0 0 16px; font-weight: bold; font-size: 24px; line-height: 34px; color: #ffffff">{{SPLIT_TITLE}}</p>
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #ffffff">{{SPLIT_TEXT}}</p>
+                              </td>
+                              <td class="mobile-block" valign="top" width="48%" style="width: 48%; vertical-align: top; padding: 0">
+                                <img src="{{SPLIT_IMAGE}}" width="267" border="0" alt="{{SPLIT_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 267px; height: auto; margin: 0 auto" />
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 08: Service block -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px; border-radius: 32px; background-color: #d7e5ff">
+                      <tr>
+                        <td style="padding: 32px">
+                          <p style="margin: 0 0 16px; font-weight: bold; font-size: 16px; line-height: 22px; color: #000000">{{SERVICE_TITLE}}</p>
+                          <p style="margin: 0 0 16px; font-weight: normal; font-size: 14px; line-height: 20px; color: #000000">{{SERVICE_TEXT}}</p>
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center" bgcolor="#FFFFFF" style="background-color: #ffffff; border: 1px solid #dedede; border-radius: 100px; mso-padding-alt: 6px 16px">
+                                <a href="{{SERVICE_URL}}" target="_blank" style="display: inline-block; padding: 6px 16px; font-size: 12px; line-height: 16px; font-weight: 500; color: #1c1e4e; text-decoration: none; text-align: center; white-space: nowrap">
+                                  {{SERVICE_BUTTON_TEXT}}
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 11: Promo code card (gradient capsule) -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D7E5FF" style="padding: 32px; background-color: #d7e5ff; border-radius: 32px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr>
+                              <td align="center" style="padding: 0 0 16px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff; text-align: center">{{PROMO_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 0 16px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000; text-align: center">{{PROMO_TEXT}}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#7186DC" style="background-color: #7186dc; border-radius: 1000px; padding: 48px 15px; background: linear-gradient(335deg, #16c1ff 0%, #b39ad2 38.36%, #7186dc 67%, #1800d0 100%)">
+                                      <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td align="center" style="padding: 0 0 8px">
+                                            <strong style="margin: 0; font-weight: bold; font-size: 46px; line-height: 52px; color: #ffffff; text-align: center">{{PROMOCODE}}</strong>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center">
+                                            <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #ffffff; text-align: center">{{PROMO_VALIDITY}}</p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#E3EDFF" style="background-color: #e3edff; padding: 8px 16px; border-radius: 16px">
+                                      <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000">
+                                        <b style="font-weight: bold">{{PROMO_EXAMPLE_LABEL}}</b><br />
+                                        {{PROMO_EXAMPLE_TEXT}}
+                                      </p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                      <a href="{{PROMO_CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff; text-align: center; text-decoration: none; white-space: nowrap">
+                                        {{PROMO_CTA_TEXT}}
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 12: Split bullets + image (MSO-safe columns) -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D7E5FF" style="padding: 0 0 24px 24px; background-color: #d7e5ff; border-radius: 32px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 548px">
+                            <tr>
+                              <td style="font-size: 0" class="two-columns">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" role="presentation" dir="rtl">
+                                  <tr>
+                                    <td dir="ltr">
+                                <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="middle" align="center" style="vertical-align: middle; width: 100%; max-width: 260px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 24px 0 20px">
+                                      <h3 style="margin: 0 0 16px; font-weight: bold; font-size: 24px; line-height: 34px; color: #000b36">{{SPLIT_BULLETS_TITLE}}</h3>
+                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                          <td valign="top" style="vertical-align: top; padding: 0 7px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000b36">&bull;</p></td>
+                                          <td valign="top" style="vertical-align: top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000b36">{{SPLIT_BULLET_1}}</p></td>
+                                        </tr>
+                                        <tr>
+                                          <td valign="top" style="vertical-align: top; padding: 0 7px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000b36">&bull;</p></td>
+                                          <td valign="top" style="vertical-align: top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000b36">{{SPLIT_BULLET_2}}</p></td>
+                                        </tr>
+                                        <tr>
+                                          <td valign="top" style="vertical-align: top; padding: 0 7px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000b36">&bull;</p></td>
+                                          <td valign="top" style="vertical-align: top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000b36">{{SPLIT_BULLET_3}}</p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                    </td><td>
+                                <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="middle" align="right" style="vertical-align: middle; width: 100%; max-width: 288px; display: inline-block">
+                                  <tr>
+                                    <td style="padding: 0">
+                                      <img src="{{SPLIT_BULLETS_IMAGE}}" width="288" border="0" alt="{{SPLIT_BULLETS_IMAGE_ALT}}" style="display: block; border: 0; width: 288px; max-width: 100%; height: auto" />
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 13: Numbered reasons + divider + example -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D7E5FF" style="padding: 32px 20px; background-color: #d7e5ff; border-radius: 40px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 540px">
+                            <tr>
+                              <td style="padding: 0 12px 4px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 32px; line-height: 40px; color: #1358ff">{{NUMBERED_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 12px 16px">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td style="padding: 0 24px 0 0"><p style="margin: 0; font-weight: bold; font-size: 80px; line-height: 80px; color: #1358ff">1</p></td>
+                                    <td><strong style="margin: 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #000b36">{{NUMBERED_POINT_1}}</strong></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 12px 16px">
+                                <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#B6C6FF" height="1" align="center" style="font-size: 0; line-height: 1px; mso-line-height-alt: 1px">&nbsp;</td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 12px 16px">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td style="padding: 0 24px 0 0"><p style="margin: 0; font-weight: bold; font-size: 80px; line-height: 80px; color: #1358ff">2</p></td>
+                                    <td><strong style="margin: 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #000b36">{{NUMBERED_POINT_2}}</strong></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 12px 0">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                  <tr>
+                                    <td bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 24px; padding: 24px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 18px; line-height: 20px; color: #5877ff">{{NUMBERED_EXAMPLE_LABEL}}</strong>
+                                      <h3 style="margin: 8px 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #000b36">{{NUMBERED_EXAMPLE_TITLE}}</h3>
+                                      <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000b36">{{NUMBERED_EXAMPLE_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 14: Tutorial step card -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D7E5FF" style="padding: 32px; background-color: #d7e5ff; border-radius: 32px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr>
+                              <td style="padding: 0 0 8px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff">{{STEP_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000">{{STEP_TEXT}}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 0 16px">
+                                <img src="{{STEP_IMAGE}}" width="516" border="0" alt="{{STEP_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 516px; height: auto; border-radius: 16px" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                      <a href="{{STEP_CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff; text-align: center; text-decoration: none; white-space: nowrap">
+                                        {{STEP_CTA_TEXT}}
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 15: Tutorial media spotlight -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#21CCE7" style="padding: 32px 40px; background-color: #21cce7; border-radius: 32px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 500px">
+                            <tr>
+                              <td align="center" style="padding: 0 0 24px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #ffffff; text-align: center">{{MEDIA_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 24px">
+                                <img src="{{MEDIA_IMAGE}}" width="500" border="0" alt="{{MEDIA_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 500px; height: auto; border-radius: 24px" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 12px 16px">
+                                      <a href="{{MEDIA_CTA_URL}}" target="_blank" style="display: block; padding: 12px 16px; font-weight: bold; font-size: 16px; line-height: 24px; color: #ffffff; text-align: center; text-decoration: none">
+                                        {{MEDIA_CTA_TEXT}}
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 16: Metallic plan row -->
+                <tr>
+                  <td style="padding: 0 0 16px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#E4E5E6" style="padding: 24px; background-color: #e4e5e6; border-radius: 40px">
+                          <h2 style="margin: 0 0 16px; font-weight: bold; font-size: 24px; line-height: 34px; color: #000b36">{{PLAN_SECTION_TITLE}}</h2>
+                          <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td bgcolor="#AC836E" style="background-color: #ac836e; border-radius: 24px; padding: 0 0 16px; background: linear-gradient(126deg, #b6947e 0%, #8f6959 21.64%, #f2c9b0 50.41%, #ac836e 57.52%, #b6947e 83%, #f8dccb 100%)">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td style="font-size: 0" class="two-columns">
+                                      <!--[if (gte mso 9)|(IE)]>
+                                      <table align="center" border="0" cellspacing="0" cellpadding="0" role="presentation" dir="rtl">
+                                        <tr>
+                                          <td dir="ltr">
+                                      <![endif]-->
+                                      <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 270px; display: inline-block" class="column">
+                                        <tr>
+                                          <td style="padding: 16px 16px 0">
+                                            <strong style="margin: 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #ffffff">{{PLAN_NAME}}</strong>
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; max-width: 100px; margin-top: 20px">
+                                              <tr>
+                                                <td align="center" bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 100px; border: 2px solid #ffffff; mso-padding-alt: 5px 15px">
+                                                  <a href="{{PLAN_BUTTON_URL}}" target="_blank" style="display: block; padding: 5px 15px; font-weight: normal; font-size: 14px; line-height: 21px; color: #322f58; text-decoration: none; text-align: center; white-space: nowrap">{{PLAN_BUTTON_TEXT}}</a>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <!--[if (gte mso 9)|(IE)]>
+                                          </td><td>
+                                      <![endif]-->
+                                      <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 246px; display: inline-block" class="column">
+                                        <tr>
+                                          <td style="padding: 16px 16px 0">
+                                            <strong style="margin: 0; font-weight: bold; font-size: 24px; line-height: 30px; color: #ffffff">Example</strong>
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin-top: 8px">
+                                              <tr><td style="padding: 0 20px 8px 0"><p style="margin: 0; font-size: 14px; line-height: 21px; color: #ffffff">Profit:</p></td><td align="right"><b style="font-size: 14px; line-height: 21px; color: #ffffff">{{PLAN_PROFIT}}</b></td></tr>
+                                              <tr><td style="padding: 0 20px 8px 0"><p style="margin: 0; font-size: 14px; line-height: 21px; color: #ffffff">Profit share:</p></td><td align="right"><b style="font-size: 14px; line-height: 21px; color: #ffffff">{{PLAN_SHARE}}</b></td></tr>
+                                              <tr><td style="padding: 0 20px 0 0"><p style="margin: 0; font-size: 14px; line-height: 21px; color: #ffffff">Payout:</p></td><td align="right"><b style="font-size: 24px; line-height: 30px; color: #ffffff">{{PLAN_PAYOUT}}</b></td></tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <!--[if (gte mso 9)|(IE)]>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <![endif]-->
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 17: White checklist card -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 16px; padding: 20px 12px 24px">
+                          <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                              <td style="font-size: 0" class="two-columns">
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 212px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 0 12px 12px">
+                                      <strong style="margin: 0; font-weight: normal; font-size: 24px; line-height: 34px; color: #000b36">{{CHECKLIST_TITLE}}</strong>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 286px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 0 12px">
+                                      <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                        <tr><td valign="top" style="padding: 0 5px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">✓</p></td><td valign="top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{CHECK_1}}</p></td></tr>
+                                        <tr><td valign="top" style="padding: 0 5px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">✓</p></td><td valign="top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{CHECK_2}}</p></td></tr>
+                                        <tr><td valign="top" style="padding: 0 5px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">✓</p></td><td valign="top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{CHECK_3}}</p></td></tr>
+                                        <tr><td valign="top" style="padding: 0 5px 0 0"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">✓</p></td><td valign="top"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{CHECK_4}}</p></td></tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 18: Dark expert course promo -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#1B064B" style="padding: 40px; background-color: #1b064b; border-radius: 40px">
+                          <table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 500px">
+                            <tr>
+                              <td style="padding: 0 0 20px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #ffffff">{{DARK_PROMO_KICKER}}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 8px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #ffffff">{{DARK_PROMO_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 24px">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#17F871" style="background-color: #17f871; border-radius: 100px; padding: 5px 16px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 14px; line-height: 21px; color: #0b0b26">{{DARK_PROMO_BADGE}}</strong>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 8px"><strong style="margin: 0; font-weight: bold; font-size: 18px; line-height: 25px; color: #ffffff">{{DARK_PROMO_LIST_TITLE}}</strong></td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 8px">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#311E5D" style="background-color: #311e5d; border-radius: 24px; padding: 16px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 18px; line-height: 25px; color: #ffffff">{{DARK_ITEM_1_TITLE}}</strong>
+                                      <p style="margin: 8px 0 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff">{{DARK_ITEM_1_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 8px">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#311E5D" style="background-color: #311e5d; border-radius: 24px; padding: 16px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 18px; line-height: 25px; color: #ffffff">{{DARK_ITEM_2_TITLE}}</strong>
+                                      <p style="margin: 8px 0 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff">{{DARK_ITEM_2_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 24px">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#311E5D" style="background-color: #311e5d; border-radius: 24px; padding: 16px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 18px; line-height: 25px; color: #ffffff">{{DARK_ITEM_3_TITLE}}</strong>
+                                      <p style="margin: 8px 0 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff">{{DARK_ITEM_3_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                      <a href="{{DARK_PROMO_CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff; text-align: center; text-decoration: none; white-space: nowrap">
+                                        {{DARK_PROMO_CTA_TEXT}}
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 19: Gradient feature tile with side image -->
+                <tr>
+                  <td style="padding: 0 0 16px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#9727FF" style="padding: 0 0 0 24px; border-radius: 24px; background-color: #9727ff; background: linear-gradient(0deg, #9727ff 0%, #5d1efe 100%) #3a64ee">
+                          <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="font-size: 0" class="two-columns">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" role="presentation" dir="rtl">
+                                  <tr>
+                                    <td dir="ltr">
+                                <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 232px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 24px 10px 0 0">
+                                      <h3 style="margin: 0 0 8px; font-weight: bold; font-size: 24px; line-height: 33px; color: #ffffff">{{FEATURE_TILE_TITLE}}</h3>
+                                      <p style="margin: 0 0 12px; font-weight: normal; font-size: 14px; line-height: 21px; color: #ffffff">{{FEATURE_TILE_TEXT}}</p>
+                                      <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width: 150px">
+                                        <tr>
+                                          <td align="center" bgcolor="#647CFF" style="background-color: #647cff; border-radius: 100px; border: 1px solid #6d84ff; mso-padding-alt: 9px 14px">
+                                            <a href="{{FEATURE_TILE_CTA_URL}}" target="_blank" style="display: block; padding: 9px 14px; font-weight: normal; font-size: 12px; line-height: 16px; color: #ffffff; text-decoration: none; text-align: center; white-space: nowrap">{{FEATURE_TILE_CTA_TEXT}}</a>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                    </td><td>
+                                <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="right" style="vertical-align: top; width: 100%; max-width: 276px; display: inline-block">
+                                  <tr>
+                                    <td align="right" style="padding: 24px 0 0">
+                                      <img src="{{FEATURE_TILE_IMAGE}}" border="0" alt="{{FEATURE_TILE_IMAGE_ALT}}" style="display: block; border: 0; width: 276px; max-width: 100%; height: auto; border-radius: 0 0 24px 0" width="276" />
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 20: Tip bar (icon + text) -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#D9FF00" style="background-color: #d9ff00; padding: 8px 16px; border-radius: 16px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td valign="middle" style="padding: 0 8px 0 0; vertical-align: middle">
+                                <img src="{{TIP_ICON}}" width="34" border="0" alt="{{TIP_ICON_ALT}}" style="display: block; border: 0; width: 34px; height: auto" />
+                              </td>
+                              <td valign="middle" style="vertical-align: middle">
+                                <p style="margin: 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #000b36">{{TIP_TEXT}}</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 21: Process step card with STEP badge -->
+                <tr>
+                  <td style="padding: 0 0 8px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 24px; padding: 32px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#17F871" style="background-color: #17f871; border-radius: 24px; padding: 4px 12px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 16px; line-height: 23px; color: #0b0b26">{{STEP_BADGE}}</strong>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 8px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff">{{PROCESS_STEP_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 16px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000">{{PROCESS_STEP_TEXT}}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td bgcolor="#F4F4F4" style="background-color: #f4f4f4; border-radius: 16px; padding: 16px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000">{{PROCESS_STEP_NOTE}}</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 22: Weekly timeline split card -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#DEEFFF" style="border-radius: 32px; background-color: #deefff">
+                          <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="font-size: 0" class="two-columns">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" role="presentation" dir="rtl">
+                                  <tr>
+                                    <td dir="ltr">
+                                <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 288px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 32px 16px 32px 25px">
+                                      <h3 style="margin: 0 0 16px; font-weight: normal; font-size: 24px; line-height: 33px; color: #1358ff"><b style="font-weight: bold">{{TIMELINE_DAY}}</b> {{TIMELINE_STAGE}}</h3>
+                                      <p style="margin: 0 0 8px; font-weight: normal; font-size: 16px; line-height: 23px; color: #000000">{{TIMELINE_POINT_1}}</p>
+                                      <p style="margin: 0 0 8px; font-weight: normal; font-size: 16px; line-height: 23px; color: #000000">{{TIMELINE_POINT_2}}</p>
+                                      <p style="margin: 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #000000">{{TIMELINE_POINT_3}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                    </td><td>
+                                <![endif]-->
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="right" style="vertical-align: top; width: 100%; max-width: 292px; display: inline-block">
+                                  <tr>
+                                    <td align="right">
+                                      <img src="{{TIMELINE_IMAGE}}" border="0" alt="{{TIMELINE_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 292px; border-radius: 0 32px 32px 0" width="292" />
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 23: Testimonial quote panel -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#B8ECFF" style="padding: 32px; background-color: #b8ecff; border-radius: 32px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr>
+                              <td align="center" style="padding: 0 0 16px">
+                                <img src="{{TESTIMONIAL_ICON}}" width="63" border="0" alt="{{TESTIMONIAL_ICON_ALT}}" style="display: block; border: 0; width: 63px; height: auto" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 0 8px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 34px; line-height: 44px; color: #1c1e4e; text-align: center">{{TESTIMONIAL_QUOTE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 0 24px">
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000; text-align: center">{{TESTIMONIAL_AUTHOR}}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p style="margin: 0; font-weight: normal; font-size: 18px; line-height: 25px; color: #000000">{{TESTIMONIAL_TEXT}}</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 24: Tutorial preview row (text + thumbnail) -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 16px; padding: 0 16px 16px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="font-size: 0" class="two-columns">
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 244px; display: inline-block" class="column">
+                                  <tr>
+                                    <td style="padding: 16px 10px 0 0">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 16px; line-height: 23px; color: #000000">{{TUTORIAL_LABEL}}</strong>
+                                      <h3 style="margin: 8px 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #1358ff">{{TUTORIAL_TITLE}}</h3>
+                                      <p style="margin: 0; font-weight: normal; font-size: 14px; line-height: 20px; color: #808080">{{TUTORIAL_META}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation" valign="top" align="center" style="vertical-align: top; width: 100%; max-width: 210px; display: inline-block">
+                                  <tr>
+                                    <td style="padding: 16px 0 0">
+                                      <img src="{{TUTORIAL_THUMB}}" width="240" border="0" alt="{{TUTORIAL_THUMB_ALT}}" style="display: block; border: 0; width: 240px; max-width: 100%; height: auto" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 25: Dark outcome summary panel -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#060054" style="padding: 32px 0; background-color: #060054; border-radius: 32px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td align="center" style="padding: 0 32px 16px">
+                                <h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #ffffff; text-align: center">{{OUTCOME_TITLE}}</h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 32px 8px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">✓ {{OUTCOME_CHECK_1}}</p></td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 32px 8px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">✓ {{OUTCOME_CHECK_2}}</p></td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 32px 24px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">✓ {{OUTCOME_CHECK_3}}</p></td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 32px 24px">
+                                <table width="100%" role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td bgcolor="#302B71" style="background-color: #302b71; border-radius: 16px; padding: 16px">
+                                      <strong style="margin: 0; font-weight: bold; font-size: 16px; line-height: 23px; color: #ffffff">{{OUTCOME_EXAMPLE_TITLE}}</strong>
+                                      <p style="margin: 8px 0 0; font-size: 16px; line-height: 23px; color: #ffffff">{{OUTCOME_EXAMPLE_TEXT}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 32px 24px">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                      <a href="{{OUTCOME_CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff; text-decoration: none; text-align: center">{{OUTCOME_CTA_TEXT}}</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding: 0 32px 0">
+                                <p style="margin: 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #ffffff">{{OUTCOME_FOOTNOTE}}</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 26: Hero single-panel with background image -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#010156" style="padding: 32px 32px 220px; background-color: #010156; border-radius: 40px; background-image: url({{HERO_BG_IMAGE}}); background-position: bottom center; background-size: 100%; background-repeat: no-repeat">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr><td style="padding: 0 0 16px"><strong style="margin: 0; font-weight: bold; font-size: 20px; line-height: 28px; color: #ffffff">{{HERO_BG_KICKER}}</strong></td></tr>
+                            <tr><td style="padding: 0 0 16px"><h1 style="margin: 0; font-weight: bold; font-size: 40px; line-height: 50px; color: #ffffff">{{HERO_BG_TITLE}}</h1></td></tr>
+                            <tr><td style="padding: 0 0 24px"><p style="margin: 0; font-weight: normal; font-size: 20px; line-height: 28px; color: #ffffff">{{HERO_BG_TEXT}}</p></td></tr>
+                            <tr>
+                              <td>
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width: 220px">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 15px">
+                                      <a href="{{HERO_BG_CTA_URL}}" target="_blank" style="display: block; padding: 15px; font-weight: normal; font-size: 16px; line-height: 21px; color: #ffffff; text-decoration: none; text-align: center; white-space: nowrap">{{HERO_BG_CTA_TEXT}}</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 27: Dark bullet instruction card -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#1D212E" style="padding: 24px 32px; background-color: #1d212e; border-radius: 32px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr><td align="center" style="padding: 0 0 16px"><img src="{{DARK_BULLET_IMAGE}}" width="516" border="0" alt="{{DARK_BULLET_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 516px; height: auto" /></td></tr>
+                            <tr><td style="padding: 0 0 16px"><h2 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #ffffff">{{DARK_BULLET_TITLE}}</h2></td></tr>
+                            <tr><td style="padding: 0 0 5px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">&bull; {{DARK_BULLET_1}}</p></td></tr>
+                            <tr><td style="padding: 0 0 5px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">&bull; {{DARK_BULLET_2}}</p></td></tr>
+                            <tr><td style="padding: 0 0 21px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #ffffff">&bull; {{DARK_BULLET_3}}</p></td></tr>
+                            <tr>
+                              <td style="padding: 0 0 12px">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                      <a href="{{DARK_BULLET_CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-size: 16px; line-height: 23px; color: #ffffff; text-decoration: none; text-align: center">{{DARK_BULLET_CTA_TEXT}}</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr><td align="center"><p style="margin: 0; font-size: 12px; line-height: 20px; color: #f9f9fc; text-align: center">{{DARK_BULLET_FOOTNOTE}}</p></td></tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 28: Image-first white card -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 24px; padding: 24px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr><td align="center"><img src="{{IMAGE_FIRST_IMAGE}}" width="468" border="0" alt="{{IMAGE_FIRST_IMAGE_ALT}}" style="display: block; border: 0; width: 100%; max-width: 468px; height: auto" /></td></tr>
+                            <tr><td style="padding: 24px 0 8px"><h3 style="margin: 0; font-weight: bold; font-size: 24px; line-height: 34px; color: #1358ff">{{IMAGE_FIRST_TITLE}}</h3></td></tr>
+                            <tr><td style="padding: 0 0 24px"><p style="margin: 0; font-weight: normal; font-size: 16px; line-height: 23px; color: #000b36">{{IMAGE_FIRST_TEXT}}</p></td></tr>
+                            <tr>
+                              <td>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td align="center" bgcolor="#1A22FF" style="background-color: #1a22ff; border: 2px solid #8f93ff; border-radius: 100px; mso-padding-alt: 14px 17px">
+                                      <a href="{{IMAGE_FIRST_CTA_URL}}" target="_blank" style="display: block; padding: 14px 17px; font-size: 16px; line-height: 23px; color: #ffffff; text-decoration: none; text-align: center">{{IMAGE_FIRST_CTA_TEXT}}</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 29: Arrow-list section on light background -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#F8EBDD" style="padding: 32px; background-color: #f8ebdd; border-radius: 32px">
+                          <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 516px">
+                            <tr><td style="padding: 0 0 8px"><h2 style="margin: 0; font-weight: bold; font-size: 32px; line-height: 40px; color: #1358ff">{{ARROW_SECTION_TITLE}}</h2></td></tr>
+                            <tr><td style="padding: 0 0 24px"><p style="margin: 0; font-size: 20px; line-height: 28px; color: #000000">{{ARROW_SECTION_TEXT}}</p></td></tr>
+                            <tr><td style="padding: 0 0 8px"><strong style="margin: 0; font-size: 18px; line-height: 25px; color: #1358ff">&rarr; {{ARROW_POINT_1_TITLE}}</strong></td></tr>
+                            <tr><td style="padding: 0 0 16px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{ARROW_POINT_1_TEXT}}</p></td></tr>
+                            <tr><td style="padding: 0 0 8px"><strong style="margin: 0; font-size: 18px; line-height: 25px; color: #1358ff">&rarr; {{ARROW_POINT_2_TITLE}}</strong></td></tr>
+                            <tr><td style="padding: 0 0 16px"><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{ARROW_POINT_2_TEXT}}</p></td></tr>
+                            <tr><td style="padding: 0 0 8px"><strong style="margin: 0; font-size: 18px; line-height: 25px; color: #1358ff">&rarr; {{ARROW_POINT_3_TITLE}}</strong></td></tr>
+                            <tr><td><p style="margin: 0; font-size: 18px; line-height: 25px; color: #000000">{{ARROW_POINT_3_TEXT}}</p></td></tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 30: Guide link strip -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; max-width: 580px">
+                      <tr>
+                        <td bgcolor="#F4F4F4" style="background-color: #f4f4f4; border-radius: 16px; padding: 16px">
+                          <strong style="margin: 0; font-weight: bold; font-size: 16px; line-height: 21px; color: #000000">
+                            {{GUIDE_LABEL}}
+                            <a href="{{GUIDE_URL}}" target="_blank" style="text-decoration: underline; color: #3e88ff">{{GUIDE_LINK_TEXT}}</a>
+                          </strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 09: Support text -->
+                <tr>
+                  <td style="padding: 0 0 24px">
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 580px">
+                      <tr>
+                        <td style="padding: 0 0 16px">
+                          <p style="margin: 0; color: #1c1e4e; font-size: 16px; line-height: 24px">
+                            Got any questions about SabioTrade? Our dedicated
+                            <a href="{{SUPPORT_URL}}" target="_blank" style="text-decoration: underline; color: #0057fa">Support Service</a> is always here to help.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong style="margin: 0; color: #1c1e4e; font-size: 16px; line-height: 24px; font-weight: bold">
+                            Stay informed and stay ahead with Sabiotrade. Follow our social channels for updates and insights.
+                          </strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK 10: Legal footer -->
+                <tr>
+                  <td style="padding: 0 0 32px">
+                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; max-width: 480px">
+                      <tr>
+                        <td align="center">
+                          <p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold">RISK WARNING:</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 8px 0 20px">
+                          <p style="margin: 0; color: #4a4c8e; font-size: 14px; line-height: 22px; text-align: center">The content on this website is for general information only.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 0 0 20px">
+                          <a target="_blank" style="text-decoration: underline; color: #4a4c8e; font-size: 14px; line-height: 22px" href="{{TERMS_URL}}">Terms and Conditions</a>
+                          <span style="display: inline-block; width: 28px">&nbsp;</span>
+                          <a target="_blank" style="text-decoration: underline; color: #4a4c8e; font-size: 14px; line-height: 22px" href="{{UNSUBSCRIBE_URL}}">Unsubscribe</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>

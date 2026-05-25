@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abandoned Cart - превью</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/hub.css" />
+  </head>
+  <body>
+    <div class="hub">
+      <header class="hub-header">
+        <p><a href="../../index.html">← Оглавление</a></p>
+        <h1>Abandoned Cart</h1>
+        <p class="hub-lead">3 письма · триггер Abandoned_cart · фокус на возврат в checkout и закрытие сомнений.</p>
+      </header>
+      <main>
+        <ul class="preview-list">
+          <li>
+            <a href="AC_01_1h.html">
+              Email 1 - 1 hour
+              <span class="variant-desc">Что выбрано в корзине + ценность плана + прямой CTA в checkout</span>
+            </a>
+          </li>
+          <li>
+            <a href="AC_02_24h.html">
+              Email 2 - 24 hours
+              <span class="variant-desc">Снятие сомнения "а вдруг не пройду" + Academy + бесплатный урок</span>
+            </a>
+          </li>
+          <li>
+            <a href="AC_03_72h.html">
+              Email 3 - 72 hours
+              <span class="variant-desc">Финальный push: EASYSTART20, price drop и дедлайн</span>
+            </a>
+          </li>
+        </ul>
+        <p class="hub-lead" style="margin-top: 20px">Превью в рамке: <a href="email-1.html">Email 1</a> · <a href="email-2.html">Email 2</a> · <a href="email-3.html">Email 3</a></p>
+        <section class="hub-meta">
+          <h2>Логика отправки</h2>
+          <ul class="meta-compact">
+            <li><strong>Trigger:</strong> событие <code>Abandoned_cart</code> через 1 час после брошенного checkout.</li>
+            <li><strong>Exit condition:</strong> событие <code>Purchase</code> — немедленный выход из серии.</li>
+            <li><strong>Re-entry:</strong> отключен, одна воронка на одну корзину.</li>
+            <li><strong>Промокод:</strong> <code>EASYSTART20</code> используется в письме 3.</li>
+          </ul>
+        </section>
+        <section class="hub-meta">
+          <h2>Атрибуты персонализации</h2>
+          <ul class="meta-compact">
+            <li><code>first_name</code>, <code>plan_name</code>, <code>plan_price</code>, <code>plan_discounted_price</code>.</li>
+            <li><code>plan_balance</code>, <code>plan_profit_target</code>, <code>plan_profit_usd</code>, <code>plan_payout</code>.</li>
+            <li><code>checkout_url</code> — ссылка на предзаполненный checkout.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

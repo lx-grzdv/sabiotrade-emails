@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post-Payout Upsell + Referral — превью</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/hub.css" />
+  </head>
+  <body>
+    <div class="hub">
+      <header class="hub-header">
+        <p><a href="../../index.html">← Оглавление</a></p>
+        <h1>Post-Payout Upsell + Referral</h1>
+        <p class="hub-lead">3 письма после первого payout: апселл -> referral -> апселл под другим углом.</p>
+      </header>
+
+      <main>
+        <ul class="preview-list">
+          <li>
+            <a href="email-1.html">
+              Email 1 — Instant upsell
+              <span class="variant-desc">Trigger: Payout_Completed (instant)</span>
+            </a>
+          </li>
+          <li>
+            <a href="email-2.html">
+              Email 2 — Day 3 referral
+              <span class="variant-desc">Trigger: +3 days, referral value proposition</span>
+            </a>
+          </li>
+          <li>
+            <a href="email-3.html">
+              Email 3 — Day 5 upsell reframe
+              <span class="variant-desc">Trigger: +5 days, only if no Purchase</span>
+            </a>
+          </li>
+        </ul>
+
+        <section class="hub-meta">
+          <h2>Воронка и условия</h2>
+          <ul>
+            <li><strong>Триггер:</strong> <code>Payout_Completed</code>.</li>
+            <li><strong>Письмо 1:</strong> отправка сразу, апселл на Ultimate/Prime/Supreme.</li>
+            <li><strong>Письмо 2:</strong> Day 3, акцент на referral-код и бесплатный Essential аккаунт.</li>
+            <li><strong>Письмо 3:</strong> Day 5, апселл другим углом только если нет <code>Purchase</code>.</li>
+            <li><strong>Exit condition:</strong> событие <code>Purchase</code> -> мгновенный выход из воронки.</li>
+            <li><strong>Re-entry:</strong> разрешен, каждый новый <code>Payout_Completed</code> запускает заново.</li>
+          </ul>
+        </section>
+
+        <section class="hub-meta">
+          <h2>Переменные и оффер</h2>
+          <ul>
+            <li><code>payout_amount</code> — обязательно в письмах 1 и 3.</li>
+            <li><code>plan_name</code> — текущий план трейдера.</li>
+            <li><code>referral_code</code> — персональный код в письме 2.</li>
+            <li>Друг получает 25% off на первую покупку.</li>
+            <li>Трейдер получает free Essential account за каждый успешный referral.</li>
+            <li>Referral не работает на entry-level планах и не суммируется с другими промокодами.</li>
+          </ul>
+        </section>
+
+        <section class="hub-meta">
+          <h2>Исходники</h2>
+          <ul>
+            <li><a href="../../development/post-payout-upsell-referral/">development/post-payout-upsell-referral/</a></li>
+            <li><a href="../../development/post-payout-upsell-referral/post_payout_upsell_referral.docx">post_payout_upsell_referral.docx</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

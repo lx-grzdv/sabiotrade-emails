@@ -1,0 +1,13 @@
+{
+  "name": "sabiotrade-email-experiments",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SabioTrade email preview hub",
+  "scripts": {
+    "sync-preview": "python3 scripts/sync-preview.py",
+    "sync-sources": "python3 scripts/sync-sources.py",
+    "snapshot-google-versions": "python3 scripts/snapshot-email-versions.py google-traffic-onboarding",
+    "archive-prod-google-version": "python3 scripts/snapshot-email-versions.py --source production google-traffic-onboarding",
+    "deploy": "npm run archive-prod-google-version && npm run sync-preview && npm run sync-sources && npx vercel@latest deploy --prod --yes"
+  }
+}
