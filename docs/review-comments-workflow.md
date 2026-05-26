@@ -10,10 +10,24 @@ Clean chain view:
 https://sabiotrade-email-experiments.vercel.app/chain?chain=google-traffic-onboarding
 ```
 
+Abandoned Cart chain view:
+
+```text
+https://sabiotrade-email-experiments.vercel.app/chain?chain=abandoned-cart
+```
+
 Review a specific email:
 
 ```text
 https://sabiotrade-email-experiments.vercel.app/chain?chain=google-traffic-onboarding&review=1&email=GTO-01
+```
+
+Abandoned Cart review links:
+
+```text
+https://sabiotrade-email-experiments.vercel.app/chain?chain=abandoned-cart&review=1&email=AC-01
+https://sabiotrade-email-experiments.vercel.app/chain?chain=abandoned-cart&review=1&email=AC-02
+https://sabiotrade-email-experiments.vercel.app/chain?chain=abandoned-cart&review=1&email=AC-03
 ```
 
 Each email row has three actions:

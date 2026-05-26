@@ -27,10 +27,16 @@ https://lcbcfbxokbemhgklkekw.supabase.co
 Current setup status:
 
 - `SUPABASE_URL` has been added to the Vercel Production environment.
-- `SUPABASE_SERVICE_ROLE_KEY` still needs to be added to Vercel Production. Use a Supabase secret key (`sb_secret_...`) or the legacy `service_role` key.
-- The `review_comments` table still needs to be created in Supabase.
+- `SUPABASE_SERVICE_ROLE_KEY` has been added to the Vercel Production environment.
+- The `review_comments` table has been created in Supabase.
+- Production API has been verified:
+
+```json
+{"ok":true,"comments":[]}
+```
+
 - Current review access is name-only: reviewers enter `Name` when opening the hub/review pages; do not set `REVIEW_COMMENTS_TOKEN` for this flow.
-- After adding the service key, redeploy the Vercel project so the API function receives the new environment variables.
+- Current production deployment is ready at `https://sabiotrade-email-experiments.vercel.app`.
 
 ## 1. Create table
 
@@ -109,7 +115,7 @@ Opens review mode and auto-loads the GTO-01 preview.
 
 ## 7. Deploy checklist
 
-Before production deploy:
+For a new environment or if the backend is recreated:
 
 1. Run the SQL above in Supabase.
 2. Add Vercel environment variables for Production and Preview:

@@ -554,12 +554,12 @@ body.preview-open .hub {
 }
 
 .link-cell {
-  min-width: 120px;
+  min-width: 210px;
 }
 
 .link-cell a {
   display: inline-block;
-  margin-right: 10px;
+  margin: 0 10px 6px 0;
 }
 
 .campaign-table-wide .id-cell code {
@@ -826,6 +826,71 @@ body.review-comments-list-open.preview-open .hub {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #253ec3;
+}
+
+.review-help {
+  position: relative;
+}
+
+.review-help summary {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #b8c3fb;
+  border-radius: 50%;
+  background: #fff;
+  color: #253ec3;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  list-style: none;
+}
+
+.review-help summary::-webkit-details-marker {
+  display: none;
+}
+
+.review-help summary:hover,
+.review-help[open] summary {
+  background: #e9edff;
+}
+
+.review-help-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 260;
+  width: min(380px, calc(100vw - 48px));
+  padding: 14px;
+  border: 1px solid #d8dcea;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(16, 18, 43, 0.18);
+  color: #303454;
+}
+
+.review-help-popover strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #151734;
+  font-size: 13px;
+}
+
+.review-help-popover ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.review-help-popover li {
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.review-help-popover li:last-child {
+  margin-bottom: 0;
 }
 
 .review-mode-actions {
@@ -1136,8 +1201,8 @@ body.preview-open .review-comment-panel {
   right: 12px;
   bottom: 12px;
   z-index: 120;
-  width: min(300px, calc(100% - 24px));
-  padding: 12px;
+  width: min(340px, calc(100% - 24px));
+  padding: 14px;
   border: 1px solid #dfe2f0;
   border-radius: 10px;
   background: #fff;
@@ -1149,11 +1214,11 @@ body.preview-open .review-comment-panel {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .review-comment-popover-head strong {
-  font-size: 13px;
+  font-size: 14px;
   color: #1f2342;
 }
 
@@ -1169,14 +1234,61 @@ body.preview-open .review-comment-panel {
   cursor: pointer;
 }
 
-.review-comment-popover-meta {
-  margin-bottom: 10px;
+.review-popover-comment-text {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.38;
+  font-weight: 600;
+  color: #151734;
+  overflow-wrap: anywhere;
+}
+
+.review-popover-compact-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6f7496;
+}
+
+.review-popover-status {
+  color: #253ec3;
+  text-transform: uppercase;
+}
+
+.review-comment-popover .review-meta-quote {
+  margin: 0 0 10px;
+  padding-left: 10px;
+  border-left: 2px solid #d8dcea;
+  color: #6f7496;
   font-size: 12px;
+  font-style: italic;
+}
+
+.review-popover-details {
+  margin-bottom: 12px;
+  font-size: 11px;
+  color: #6f7496;
+}
+
+.review-popover-details summary {
+  width: max-content;
+  cursor: pointer;
+  font-weight: 700;
   color: #4a5074;
 }
 
-.review-comment-popover-meta p {
-  margin: 0 0 6px;
+.review-popover-details p {
+  margin: 6px 0 0;
+}
+
+.review-popover-details code {
+  display: block;
+  margin-top: 3px;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .review-comment-popover-actions {

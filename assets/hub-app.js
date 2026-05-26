@@ -16,6 +16,21 @@
     return path.startsWith("development/") ? `sources/${path.slice("development/".length)}` : path;
   };
 
+  const toPublicSourceHref = (path) => {
+    const publicPath = toPublicSourcePath(path);
+    if (!publicPath) return "";
+    if (publicPath.endsWith("/")) return `${publicPath}README.md`;
+    const hasExtension = /\/[^/]+\.[^/]+$/.test(publicPath);
+    return hasExtension ? publicPath : `${publicPath}/README.md`;
+  };
+
+  const getHtmlDownloadName = (path, fallback = "email.html") => {
+    const fileName = decodeURIComponent(String(path || "").split("?")[0].split("/").pop() || "");
+    return fileName.endsWith(".html") ? fileName : fallback;
+  };
+
+  const getHtmlDownloadHref = (path) => `/api/download-html?path=${encodeURIComponent(path || "")}`;
+
   const renderEmailRows = (emails, campaignName, campaignId) =>
     emails
       .map(
@@ -35,7 +50,15 @@
               Preview
             </a>
             <a href="chain.html?chain=${escapeHtml(campaignId)}&review=1&email=${escapeHtml(email.id)}">Review</a>
-            <a href="${escapeHtml(toPublicSourcePath(email.developmentPath))}" target="_blank" rel="noopener">Source</a>
+            <a
+              href="${escapeHtml(getHtmlDownloadHref(email.previewPath))}"
+              download="${escapeHtml(getHtmlDownloadName(email.previewPath, `${email.id}.html`))}"
+              class="download-html-link"
+              aria-label="Download HTML for ${escapeHtml(email.id)}"
+            >
+              Download HTML
+            </a>
+            <a href="${escapeHtml(toPublicSourceHref(email.developmentPath))}" target="_blank" rel="noopener">Source</a>
           </td>
         </tr>
       `
@@ -170,9 +193,9 @@
           <li><strong>Триггер:</strong> ${escapeHtml(campaign.trigger)}</li>
           <li><strong>Exit:</strong> ${escapeHtml(campaign.exit)}</li>
           <li><strong>Re-entry:</strong> ${escapeHtml(campaign.reentry)}</li>
-          <li><strong>Brief/ТЗ:</strong> <a href="${escapeHtml(toPublicSourcePath(campaign.briefPath))}" target="_blank" rel="noopener"><code>${escapeHtml(toPublicSourcePath(campaign.briefPath))}</code></a></li>
+          <li><strong>Brief/ТЗ:</strong> <a href="${escapeHtml(toPublicSourceHref(campaign.briefPath))}" target="_blank" rel="noopener"><code>${escapeHtml(toPublicSourcePath(campaign.briefPath))}</code></a></li>
           <li><strong>Preview files:</strong> <code>${escapeHtml(campaign.previewFolder)}</code></li>
-          <li><strong>Development folder:</strong> <a href="${escapeHtml(toPublicSourcePath(campaign.developmentFolder))}" target="_blank" rel="noopener"><code>${escapeHtml(toPublicSourcePath(campaign.developmentFolder))}</code></a></li>
+          <li><strong>Development folder:</strong> <a href="${escapeHtml(toPublicSourceHref(campaign.developmentFolder))}" target="_blank" rel="noopener"><code>${escapeHtml(toPublicSourcePath(campaign.developmentFolder))}</code></a></li>
         </ul>
       </section>
 
@@ -221,6 +244,7 @@
         <strong id="global-preview-title">Preview</strong>
         <div class="global-preview-actions">
           <a id="global-preview-open" href="#" target="_blank" rel="noopener">Открыть отдельно</a>
+          <a id="global-preview-download" href="#" download>Скачать HTML</a>
           <button type="button" id="global-preview-close" aria-label="Закрыть preview">×</button>
         </div>
       </div>
@@ -235,11 +259,14 @@
     const frame = shell.querySelector("#global-preview-frame");
     const title = shell.querySelector("#global-preview-title");
     const openLink = shell.querySelector("#global-preview-open");
-    if (!frame || !title || !openLink) return;
+    const downloadLink = shell.querySelector("#global-preview-download");
+    if (!frame || !title || !openLink || !downloadLink) return;
 
     frame.src = href;
     title.textContent = titleText || "Preview";
     openLink.setAttribute("href", href);
+    downloadLink.setAttribute("href", getHtmlDownloadHref(href));
+    downloadLink.setAttribute("download", getHtmlDownloadName(href));
     document.body.classList.add("preview-open");
   };
 
@@ -870,6 +897,21 @@
     bar.innerHTML = `
       <div class="review-mode-bar-main">
         <span class="review-mode-label">Review mode</span>
+        <details class="review-help">
+          <summary aria-label="How review mode works">?</summary>
+          <div class="review-help-popover">
+            <strong>Как работает review</strong>
+            <ul>
+              <li><b>Shared comments</b> — комментарии синхронизируются через общую базу и видны другим пользователям.</li>
+              <li><b>Name</b> — имя сохраняется в этом браузере и используется как автор новых комментариев и смены статусов.</li>
+              <li><b>Hide comments</b> — скрывает пины комментариев на письме, но ничего не удаляет.</li>
+              <li><b>Comments list</b> — открывает список всех комментариев по текущей цепочке с фильтрами Open, Applied, Resolved и All.</li>
+              <li><b>Sync now</b> — вручную подтягивает свежие комментарии с сервера и отправляет локальные.</li>
+              <li><b>Export comments</b> — скачивает JSON-бэкап комментариев.</li>
+              <li><b>Clear comments</b> — удаляет комментарии текущей цепочки, включая общие комментарии, если включен shared sync.</li>
+            </ul>
+          </div>
+        </details>
         <span id="review-sync-status" class="review-sync-status">Local comments</span>
         <span id="review-identity-status" class="review-identity-status" hidden>Enter name to review</span>
         <label class="review-author-field">Name:
@@ -986,15 +1028,17 @@
         <strong id="review-popover-title">Comment</strong>
         <button type="button" id="review-popover-close" aria-label="Close">×</button>
       </div>
-      <div class="review-comment-popover-meta">
-        <p><span class="review-meta-label">#</span> <span id="review-popover-number">—</span></p>
-        <p><span class="review-meta-label">Author</span> <span id="review-popover-author">—</span></p>
-        <p><span class="review-meta-label">Email ID</span> <code id="review-popover-email-id">—</code></p>
-        <p><span class="review-meta-label">Status</span> <span id="review-popover-status">—</span></p>
-        <p class="review-meta-quote" id="review-popover-quote">—</p>
-        <p id="review-popover-comment">—</p>
-        <p><span class="review-meta-label">Source</span> <code id="review-popover-source">—</code></p>
+      <p id="review-popover-comment" class="review-popover-comment-text">—</p>
+      <div class="review-popover-compact-meta">
+        <span id="review-popover-author">—</span>
+        <span id="review-popover-email-id">—</span>
+        <span id="review-popover-status" class="review-popover-status">open</span>
       </div>
+      <p class="review-meta-quote" id="review-popover-quote">—</p>
+      <details class="review-popover-details">
+        <summary>Details</summary>
+        <p><span class="review-meta-label">Source</span> <code id="review-popover-source">—</code></p>
+      </details>
       <div class="review-comment-popover-actions">
         <button type="button" id="review-popover-applied" class="review-btn-primary" data-review-requires-name>Mark applied</button>
         <button type="button" id="review-popover-resolve" class="review-btn-primary" data-review-requires-name>Resolve</button>
@@ -1045,9 +1089,8 @@
     activeCommentId = enriched.id;
 
     popover.querySelector("#review-popover-title").textContent = "Comment " + (numbers.get(enriched.id) || "—");
-    popover.querySelector("#review-popover-number").textContent = String(numbers.get(enriched.id) || "—");
     popover.querySelector("#review-popover-author").textContent = enriched.authorName || "Anonymous";
-    popover.querySelector("#review-popover-email-id").textContent = enriched.emailId || "—";
+    popover.querySelector("#review-popover-email-id").textContent = enriched.emailId ? "Email " + enriched.emailId : "Email —";
     popover.querySelector("#review-popover-status").textContent = enriched.status || "open";
     popover.querySelector("#review-popover-quote").textContent = enriched.textQuote || "—";
     popover.querySelector("#review-popover-comment").textContent = enriched.comment || "—";
