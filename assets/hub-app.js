@@ -126,50 +126,48 @@
   };
 
   const READINESS_LABELS = ["Preview", "HTML", "Comments", "Pushwoosh"];
-  const renderReadinessBadges = () =>
-    READINESS_LABELS.map(
-      (label) => `
-        <span class="readiness-badge readiness-badge-neutral">
-          <b>${escapeHtml(label)}</b>
-          <em>not checked</em>
-        </span>
-      `
-    ).join("");
+  const renderCompactReadiness = () => {
+    const checkedCount = 0;
+    const totalCount = READINESS_LABELS.length;
+    return `
+      <span class="qa-compact-readiness">QA ${checkedCount}/${totalCount} · not checked</span>
+    `;
+  };
 
   const renderEmailRows = (emails, campaignName, campaignId) =>
     emails
       .map(
         (email, index) => `
-        <tr>
+        <tr class="email-main-row">
           <td data-label="#">${index + 1}</td>
           <td class="id-cell" data-label="ID"><code>${escapeHtml(email.id)}</code></td>
           <td data-label="Когда шлется">${escapeHtml(email.sendAt)}</td>
           <td data-label="Subject">${escapeHtml(email.subject || "—")}</td>
           <td data-label="Preheader">${escapeHtml(email.preheader || "—")}</td>
-          <td class="readiness-cell" data-label="Readiness">
-            <div class="readiness-badges">
-              ${renderReadinessBadges()}
-            </div>
-          </td>
-          <td class="link-cell" data-label="Открыть">
-            <div class="email-actions" role="group" aria-label="Actions for ${escapeHtml(email.id)}">
-            <a
-              href="${escapeHtml(email.previewPath)}"
-              class="email-action js-preview-link-clean"
-              data-preview-title="${escapeHtml(campaignName)} · ${escapeHtml(email.id)}"
-            >
-              Preview
-            </a>
-            <a class="email-action" href="chain.html?chain=${escapeHtml(campaignId)}&review=1&email=${escapeHtml(email.id)}">Review</a>
-            <a
-              href="${escapeHtml(getHtmlDownloadHref(email.previewPath))}"
-              download="${escapeHtml(getHtmlDownloadName(email.previewPath, `${email.id}.html`))}"
-              class="email-action email-action-download download-html-link"
-              aria-label="Download HTML for ${escapeHtml(email.id)}"
-            >
-              Download HTML
-            </a>
-            <a class="email-action" href="${escapeHtml(toPublicSourceHref(email.developmentPath))}" target="_blank" rel="noopener">Source</a>
+        </tr>
+        <tr class="email-action-row">
+          <td colspan="5">
+            <div class="email-action-row-inner">
+              <div class="email-actions" role="group" aria-label="Actions for ${escapeHtml(email.id)}">
+              <a
+                href="${escapeHtml(email.previewPath)}"
+                class="email-action js-preview-link-clean"
+                data-preview-title="${escapeHtml(campaignName)} · ${escapeHtml(email.id)}"
+              >
+                Preview
+              </a>
+              <a class="email-action" href="chain.html?chain=${escapeHtml(campaignId)}&review=1&email=${escapeHtml(email.id)}">Review</a>
+              <a
+                href="${escapeHtml(getHtmlDownloadHref(email.previewPath))}"
+                download="${escapeHtml(getHtmlDownloadName(email.previewPath, `${email.id}.html`))}"
+                class="email-action email-action-download download-html-link"
+                aria-label="Download HTML for ${escapeHtml(email.id)}"
+              >
+                Download HTML
+              </a>
+              <a class="email-action" href="${escapeHtml(toPublicSourceHref(email.developmentPath))}" target="_blank" rel="noopener">Source</a>
+              </div>
+              ${renderCompactReadiness()}
             </div>
           </td>
         </tr>
@@ -205,8 +203,6 @@
                   <th>Когда шлется</th>
                   <th>Subject</th>
                   <th>Preheader</th>
-                  <th>Readiness</th>
-                  <th>Открыть</th>
                 </tr>
               </thead>
               <tbody>
@@ -410,8 +406,6 @@
                   <th>Когда шлется</th>
                   <th>Subject</th>
                   <th>Preheader</th>
-                  <th>Readiness</th>
-                  <th>Открыть</th>
                 </tr>
               </thead>
               <tbody>
@@ -435,8 +429,6 @@
               <th>Когда шлется</th>
               <th>Subject</th>
               <th>Preheader</th>
-              <th>Readiness</th>
-              <th>Открыть</th>
             </tr>
           </thead>
           <tbody>
