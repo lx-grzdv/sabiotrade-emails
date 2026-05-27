@@ -30,6 +30,27 @@
   };
 
   const getHtmlDownloadHref = (path) => `/api/download-html?path=${encodeURIComponent(path || "")}`;
+  const getChainIdFromLocation = () => new URLSearchParams(window.location.search).get("chain") || "";
+
+  const findCampaignAndEmailByPreviewPath = (previewPath, campaignId) => {
+    if (!previewPath) return null;
+    const campaigns = campaignId && campaignsById[campaignId] ? [campaignsById[campaignId]] : data.campaigns;
+    for (const campaign of campaigns) {
+      const email = campaign.emails.find((item) => item.previewPath === previewPath);
+      if (email) return { campaign, email };
+    }
+    return null;
+  };
+
+  const buildPreviewTitle = (href, titleText) => {
+    const rawTitle = String(titleText || "").trim();
+    const resolved = findCampaignAndEmailByPreviewPath(href, getChainIdFromLocation());
+    if (!resolved) return rawTitle || "Preview";
+    const canonicalTitle = `${resolved.campaign.name} · ${resolved.email.id}`;
+    if (!rawTitle || rawTitle === "Preview") return canonicalTitle;
+    if (rawTitle.includes("·")) return rawTitle;
+    return canonicalTitle;
+  };
 
   const EMAIL_GROUPS = [
     { key: "1w", title: "1W track", pattern: /^ASO-1W-/i },
@@ -53,6 +74,67 @@
     });
     return EMAIL_GROUPS.map((group) => grouped.get(group.key)).filter((group) => group && group.emails.length > 0);
   };
+  const ACADEMY_TRACK_FILTERS = [
+    { key: "all", label: "All" },
+    { key: "1w", label: "1W" },
+    { key: "4w", label: "4W" },
+    { key: "12w", label: "12W" },
+    { key: "events", label: "Events" },
+  ];
+
+  const normalizeAcademyTrackFilter = (value) => {
+    const raw = String(value || "").toLowerCase();
+    return ACADEMY_TRACK_FILTERS.some((item) => item.key === raw) ? raw : "all";
+  };
+
+  const renderBulkDownloadWidget = ({ scopeId, buttonLabel, emails }) => {
+    if (!emails || !emails.length) return "";
+    const links = emails
+      .map(
+        (email) => `
+          <li>
+            <a
+              data-bulk-download-item="1"
+              href="${escapeHtml(getHtmlDownloadHref(email.previewPath))}"
+              download="${escapeHtml(getHtmlDownloadName(email.previewPath, `${email.id}.html`))}"
+              class="download-html-link"
+            >
+              ${escapeHtml(email.id)}
+            </a>
+          </li>
+        `
+      )
+      .join("");
+
+    return `
+      <div class="bulk-download-widget">
+        <button type="button" class="bulk-download-toggle" data-bulk-toggle="bulk-${escapeHtml(scopeId)}">
+          ${escapeHtml(buttonLabel)}
+        </button>
+        <div id="bulk-${escapeHtml(scopeId)}" class="bulk-download-panel" hidden>
+          <p class="bulk-download-title">HTML files in this scope (${emails.length})</p>
+          <button type="button" class="bulk-download-run" data-bulk-start="bulk-${escapeHtml(scopeId)}">
+            Try download all
+          </button>
+          <p class="bulk-download-note" hidden>
+            If the browser blocks multiple files, use the links below to download manually.
+          </p>
+          <ul class="bulk-download-list">${links}</ul>
+        </div>
+      </div>
+    `;
+  };
+
+  const READINESS_LABELS = ["Preview", "HTML", "Comments", "Pushwoosh"];
+  const renderReadinessBadges = () =>
+    READINESS_LABELS.map(
+      (label) => `
+        <span class="readiness-badge readiness-badge-neutral">
+          <b>${escapeHtml(label)}</b>
+          <em>not checked</em>
+        </span>
+      `
+    ).join("");
 
   const renderEmailRows = (emails, campaignName, campaignId) =>
     emails
@@ -64,6 +146,11 @@
           <td data-label="Когда шлется">${escapeHtml(email.sendAt)}</td>
           <td data-label="Subject">${escapeHtml(email.subject || "—")}</td>
           <td data-label="Preheader">${escapeHtml(email.preheader || "—")}</td>
+          <td class="readiness-cell" data-label="Readiness">
+            <div class="readiness-badges">
+              ${renderReadinessBadges()}
+            </div>
+          </td>
           <td class="link-cell" data-label="Открыть">
             <div class="email-actions" role="group" aria-label="Actions for ${escapeHtml(email.id)}">
             <a
@@ -118,6 +205,7 @@
                   <th>Когда шлется</th>
                   <th>Subject</th>
                   <th>Preheader</th>
+                  <th>Readiness</th>
                   <th>Открыть</th>
                 </tr>
               </thead>
@@ -210,12 +298,18 @@
       `
       : "";
     const groupedEmails = groupEmailsByTrack(campaign.emails);
-    const hasMultipleGroups = groupedEmails.length > 1;
-    const groupByKey = Object.fromEntries(groupedEmails.map((group) => [group.key, group]));
-    const eventDrivenCount = groupByKey.events ? groupByKey.events.emails.length : 0;
-    const timelineCount = campaign.emails.length - eventDrivenCount;
-    const timelineTrackCount = ["1w", "4w", "12w"].filter((key) => (groupByKey[key]?.emails.length || 0) > 0).length;
     const isAcademyCampaign = campaign.id === "academy-subscription-onboarding";
+    const selectedTrack = isAcademyCampaign ? normalizeAcademyTrackFilter(params.get("track")) : "all";
+    const visibleGroups =
+      isAcademyCampaign && selectedTrack !== "all"
+        ? groupedEmails.filter((group) => group.key === selectedTrack)
+        : groupedEmails;
+    const hasMultipleGroups = visibleGroups.length > 1;
+    const groupByKey = Object.fromEntries(visibleGroups.map((group) => [group.key, group]));
+    const fullGroupByKey = Object.fromEntries(groupedEmails.map((group) => [group.key, group]));
+    const eventDrivenCount = fullGroupByKey.events ? fullGroupByKey.events.emails.length : 0;
+    const timelineCount = campaign.emails.length - eventDrivenCount;
+    const timelineTrackCount = ["1w", "4w", "12w"].filter((key) => (fullGroupByKey[key]?.emails.length || 0) > 0).length;
     const overviewStats = [
       { label: "Total emails", value: campaign.emails.length },
       { label: "Groups/tracks", value: groupedEmails.length },
@@ -224,10 +318,10 @@
       { label: "Timeline tracks", value: timelineTrackCount || (timelineCount > 0 ? 1 : 0) },
     ];
     const academyTracks = [
-      { label: "1W track", value: groupByKey["1w"]?.emails.length || 0 },
-      { label: "4W track", value: groupByKey["4w"]?.emails.length || 0 },
-      { label: "12W track", value: groupByKey["12w"]?.emails.length || 0 },
-      { label: "Event-driven", value: groupByKey.events?.emails.length || 0 },
+      { label: "1W track", value: fullGroupByKey["1w"]?.emails.length || 0 },
+      { label: "4W track", value: fullGroupByKey["4w"]?.emails.length || 0 },
+      { label: "12W track", value: fullGroupByKey["12w"]?.emails.length || 0 },
+      { label: "Event-driven", value: fullGroupByKey.events?.emails.length || 0 },
     ];
     const academyBreakdown = isAcademyCampaign
       ? `
@@ -241,6 +335,29 @@
               `
             )
             .join("")}
+        </div>
+      `
+      : "";
+    const academyFilterControls = isAcademyCampaign
+      ? `
+        <div class="academy-track-filter" role="tablist" aria-label="Academy track filter">
+          ${ACADEMY_TRACK_FILTERS.map((item) => {
+            const nextParams = new URLSearchParams(params.toString());
+            if (item.key === "all") nextParams.delete("track");
+            else nextParams.set("track", item.key);
+            const href = `chain.html?${nextParams.toString()}`;
+            const isActive = selectedTrack === item.key;
+            return `
+              <a
+                class="academy-track-filter-item${isActive ? " is-active" : ""}"
+                href="${escapeHtml(href)}"
+                role="tab"
+                aria-selected="${isActive ? "true" : "false"}"
+              >
+                ${escapeHtml(item.label)}
+              </a>
+            `;
+          }).join("")}
         </div>
       `
       : "";
@@ -269,13 +386,20 @@
         </nav>
       `
       : "";
-    const groupedTables = groupedEmails
+    const groupedTables = visibleGroups
       .map(
         (group) => `
         <section class="chain-group chain-nav-target" id="group-${escapeHtml(group.key)}">
           <div class="chain-group-head">
-            <h3>${escapeHtml(group.title)}</h3>
-            <span>${group.emails.length} email${group.emails.length === 1 ? "" : "s"}</span>
+            <div class="chain-group-head-main">
+              <h3>${escapeHtml(group.title)}</h3>
+              <span>${group.emails.length} email${group.emails.length === 1 ? "" : "s"}</span>
+            </div>
+            ${renderBulkDownloadWidget({
+              scopeId: `group-${group.key}`,
+              buttonLabel: "Download group HTML",
+              emails: group.emails,
+            })}
           </div>
           <div class="table-wrap">
             <table class="campaign-table campaign-table-wide" role="table">
@@ -286,6 +410,7 @@
                   <th>Когда шлется</th>
                   <th>Subject</th>
                   <th>Preheader</th>
+                  <th>Readiness</th>
                   <th>Открыть</th>
                 </tr>
               </thead>
@@ -298,6 +423,7 @@
       `
       )
       .join("");
+    const sequenceEmails = visibleGroups[0]?.emails || campaign.emails;
 
     const sequenceSection = `
       <div class="table-wrap">
@@ -309,11 +435,12 @@
               <th>Когда шлется</th>
               <th>Subject</th>
               <th>Preheader</th>
+              <th>Readiness</th>
               <th>Открыть</th>
             </tr>
           </thead>
           <tbody>
-            ${renderEmailRows(campaign.emails, campaign.name, campaign.id)}
+            ${renderEmailRows(sequenceEmails, campaign.name, campaign.id)}
           </tbody>
         </table>
       </div>
@@ -336,6 +463,7 @@
 
       <section class="hub-meta chain-nav-target" id="chain-overview-section">
         <h2>Quick overview</h2>
+        ${academyFilterControls}
         <div class="chain-overview-grid">
           ${overviewStats
             .map(
@@ -359,6 +487,13 @@
             <p>Re-entry</p>
             <strong>${escapeHtml(campaign.reentry)}</strong>
           </article>
+        </div>
+        <div class="chain-overview-actions">
+          ${renderBulkDownloadWidget({
+            scopeId: `campaign-${campaign.id}`,
+            buttonLabel: "Download all HTML",
+            emails: campaign.emails,
+          })}
         </div>
         ${academyBreakdown}
       </section>
@@ -412,7 +547,7 @@
     if (!frame || !title || !openLink || !downloadLink) return;
 
     frame.src = href;
-    title.textContent = titleText || "Preview";
+    title.textContent = buildPreviewTitle(href, titleText);
     openLink.setAttribute("href", href);
     downloadLink.setAttribute("href", getHtmlDownloadHref(href));
     downloadLink.setAttribute("download", getHtmlDownloadName(href));
@@ -424,6 +559,45 @@
   };
 
   document.addEventListener("click", (event) => {
+    const bulkToggle = event.target.closest("[data-bulk-toggle]");
+    if (bulkToggle) {
+      event.preventDefault();
+      const panelId = bulkToggle.getAttribute("data-bulk-toggle");
+      if (!panelId) return;
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+      const shouldOpen = panel.hidden;
+      document.querySelectorAll(".bulk-download-panel").forEach((item) => {
+        item.hidden = true;
+      });
+      panel.hidden = !shouldOpen;
+      return;
+    }
+
+    const bulkStart = event.target.closest("[data-bulk-start]");
+    if (bulkStart) {
+      event.preventDefault();
+      const panelId = bulkStart.getAttribute("data-bulk-start");
+      if (!panelId) return;
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+      const links = Array.from(panel.querySelectorAll("a[data-bulk-download-item]"));
+      links.forEach((link, index) => {
+        window.setTimeout(() => {
+          const temp = document.createElement("a");
+          temp.href = link.getAttribute("href") || "";
+          temp.download = link.getAttribute("download") || "";
+          temp.style.display = "none";
+          document.body.appendChild(temp);
+          temp.click();
+          temp.remove();
+        }, index * 120);
+      });
+      const note = panel.querySelector(".bulk-download-note");
+      if (note) note.hidden = false;
+      return;
+    }
+
     const previewLink = event.target.closest(".js-preview-link, .js-preview-link-clean");
     if (previewLink) {
       event.preventDefault();
@@ -1046,6 +1220,7 @@
     bar.innerHTML = `
       <div class="review-mode-bar-main">
         <span class="review-mode-label">Review mode</span>
+        <span class="review-mode-hint">Click an email block to add a comment.</span>
         <details class="review-help">
           <summary aria-label="How review mode works">?</summary>
           <div class="review-help-popover">

@@ -537,6 +537,43 @@ body.preview-open .hub {
   gap: 10px;
 }
 
+.academy-track-filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 4px;
+  border: 1px solid #d6dcf8;
+  border-radius: 999px;
+  background: #f4f6ff;
+}
+
+.academy-track-filter-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: #2b366d;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 7px 11px;
+  white-space: nowrap;
+}
+
+.academy-track-filter-item:hover {
+  background: #e5eaff;
+  text-decoration: none;
+}
+
+.academy-track-filter-item.is-active {
+  border-color: #bac7ff;
+  background: #fff;
+  color: #253ec3;
+}
+
 .chain-overview-card {
   border: 1px solid #e4e8f9;
   border-radius: 10px;
@@ -567,6 +604,10 @@ body.preview-open .hub {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: 12px;
+}
+
+.chain-overview-actions {
   margin-top: 12px;
 }
 
@@ -649,6 +690,11 @@ body.preview-open .hub {
   margin: 0 0 10px;
 }
 
+.chain-group-head-main {
+  display: grid;
+  gap: 6px;
+}
+
 .chain-group-head h3 {
   margin: 0;
   font-size: 16px;
@@ -663,6 +709,68 @@ body.preview-open .hub {
   border-radius: 999px;
   padding: 4px 8px;
   white-space: nowrap;
+}
+
+.bulk-download-widget {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.bulk-download-toggle,
+.bulk-download-run {
+  border: 1px solid #bbc8ff;
+  border-radius: 7px;
+  background: #edf2ff;
+  color: #253795;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  line-height: 1.3;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.bulk-download-run {
+  background: #fff;
+}
+
+.bulk-download-toggle:hover,
+.bulk-download-run:hover {
+  background: #dfe8ff;
+}
+
+.bulk-download-panel {
+  border: 1px solid #d5dcfb;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+.bulk-download-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2f3355;
+}
+
+.bulk-download-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #5a6084;
+}
+
+.bulk-download-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  max-height: 170px;
+  overflow: auto;
+}
+
+.bulk-download-list li {
+  margin-bottom: 4px;
 }
 
 .campaign-table-wide th:nth-child(1),
@@ -685,6 +793,54 @@ body.preview-open .hub {
 .campaign-table-wide th:nth-child(5),
 .campaign-table-wide td:nth-child(5) {
   min-width: 260px;
+}
+
+.campaign-table-wide th:nth-child(6),
+.campaign-table-wide td:nth-child(6) {
+  min-width: 220px;
+}
+
+.campaign-table-wide th:nth-child(7),
+.campaign-table-wide td:nth-child(7) {
+  min-width: 230px;
+}
+
+.readiness-cell {
+  min-width: 0;
+}
+
+.readiness-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.readiness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.readiness-badge b {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2f3355;
+}
+
+.readiness-badge em {
+  margin: 0;
+  font-style: normal;
+  font-weight: 600;
+  color: #5a6084;
+}
+
+.readiness-badge-neutral {
+  border: 1px solid #d8dcea;
+  background: #f7f8fc;
 }
 
 .link-cell {
@@ -803,7 +959,7 @@ body.preview-open .global-preview-shell {
 }
 
 .review-preview-toolbar-btn {
-  border: 1px solid #c8d0f5;
+  border: 1px solid #9fb0ff;
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 11px;
@@ -811,13 +967,13 @@ body.preview-open .global-preview-shell {
   font-family: inherit;
   line-height: 1.3;
   cursor: pointer;
-  background: #fff;
-  color: #253ec3;
+  background: #eef2ff;
+  color: #1f34af;
   white-space: nowrap;
 }
 
 .review-preview-toolbar-btn:hover {
-  background: #e9edff;
+  background: #dfe7ff;
 }
 
 .global-preview-body {
@@ -889,6 +1045,15 @@ body.review-comments-list-open.preview-open .hub {
     font-size: 11px;
   }
 
+  .readiness-badges {
+    gap: 5px;
+  }
+
+  .readiness-badge {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
   .cjm-card {
     padding: 14px;
   }
@@ -906,6 +1071,12 @@ body.review-comments-list-open.preview-open .hub {
     gap: 8px;
   }
 
+  .academy-track-filter {
+    display: flex;
+    width: 100%;
+    border-radius: 12px;
+  }
+
   .chain-overview-card {
     padding: 9px 10px;
   }
@@ -918,6 +1089,10 @@ body.review-comments-list-open.preview-open .hub {
     align-items: flex-start;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .bulk-download-panel {
+    max-width: min(100%, 280px);
   }
 
   .chain-sticky-nav {
@@ -1032,6 +1207,16 @@ body.review-comments-list-open.preview-open .hub {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #253ec3;
+}
+
+.review-mode-hint {
+  font-size: 12px;
+  font-weight: 600;
+  color: #25326b;
+  background: #e8eeff;
+  border: 1px solid #c8d4ff;
+  border-radius: 999px;
+  padding: 4px 10px;
 }
 
 .review-help {
