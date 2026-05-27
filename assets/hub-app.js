@@ -31,34 +31,59 @@
 
   const getHtmlDownloadHref = (path) => `/api/download-html?path=${encodeURIComponent(path || "")}`;
 
+  const EMAIL_GROUPS = [
+    { key: "1w", title: "1W track", pattern: /^ASO-1W-/i },
+    { key: "4w", title: "4W track", pattern: /^ASO-4W-/i },
+    { key: "12w", title: "12W track", pattern: /^ASO-12W-/i },
+    { key: "events", title: "Event-driven", pattern: /^ASO-EV-/i },
+    { key: "sequence", title: "Sequence", pattern: null },
+  ];
+
+  const getEmailGroup = (emailId) => {
+    const id = String(emailId || "");
+    const matched = EMAIL_GROUPS.find((group) => group.pattern && group.pattern.test(id));
+    return matched || EMAIL_GROUPS[EMAIL_GROUPS.length - 1];
+  };
+
+  const groupEmailsByTrack = (emails) => {
+    const grouped = new Map(EMAIL_GROUPS.map((group) => [group.key, { ...group, emails: [] }]));
+    emails.forEach((email) => {
+      const group = getEmailGroup(email.id);
+      grouped.get(group.key)?.emails.push(email);
+    });
+    return EMAIL_GROUPS.map((group) => grouped.get(group.key)).filter((group) => group && group.emails.length > 0);
+  };
+
   const renderEmailRows = (emails, campaignName, campaignId) =>
     emails
       .map(
         (email, index) => `
         <tr>
-          <td>${index + 1}</td>
-          <td class="id-cell"><code>${escapeHtml(email.id)}</code></td>
-          <td>${escapeHtml(email.sendAt)}</td>
-          <td>${escapeHtml(email.subject || "—")}</td>
-          <td>${escapeHtml(email.preheader || "—")}</td>
-          <td class="link-cell">
+          <td data-label="#">${index + 1}</td>
+          <td class="id-cell" data-label="ID"><code>${escapeHtml(email.id)}</code></td>
+          <td data-label="Когда шлется">${escapeHtml(email.sendAt)}</td>
+          <td data-label="Subject">${escapeHtml(email.subject || "—")}</td>
+          <td data-label="Preheader">${escapeHtml(email.preheader || "—")}</td>
+          <td class="link-cell" data-label="Открыть">
+            <div class="email-actions" role="group" aria-label="Actions for ${escapeHtml(email.id)}">
             <a
               href="${escapeHtml(email.previewPath)}"
-              class="js-preview-link-clean"
+              class="email-action js-preview-link-clean"
               data-preview-title="${escapeHtml(campaignName)} · ${escapeHtml(email.id)}"
             >
               Preview
             </a>
-            <a href="chain.html?chain=${escapeHtml(campaignId)}&review=1&email=${escapeHtml(email.id)}">Review</a>
+            <a class="email-action" href="chain.html?chain=${escapeHtml(campaignId)}&review=1&email=${escapeHtml(email.id)}">Review</a>
             <a
               href="${escapeHtml(getHtmlDownloadHref(email.previewPath))}"
               download="${escapeHtml(getHtmlDownloadName(email.previewPath, `${email.id}.html`))}"
-              class="download-html-link"
+              class="email-action email-action-download download-html-link"
               aria-label="Download HTML for ${escapeHtml(email.id)}"
             >
               Download HTML
             </a>
-            <a href="${escapeHtml(toPublicSourceHref(email.developmentPath))}" target="_blank" rel="noopener">Source</a>
+            <a class="email-action" href="${escapeHtml(toPublicSourceHref(email.developmentPath))}" target="_blank" rel="noopener">Source</a>
+            </div>
           </td>
         </tr>
       `
@@ -184,6 +209,116 @@
       </section>
       `
       : "";
+    const groupedEmails = groupEmailsByTrack(campaign.emails);
+    const hasMultipleGroups = groupedEmails.length > 1;
+    const groupByKey = Object.fromEntries(groupedEmails.map((group) => [group.key, group]));
+    const eventDrivenCount = groupByKey.events ? groupByKey.events.emails.length : 0;
+    const timelineCount = campaign.emails.length - eventDrivenCount;
+    const timelineTrackCount = ["1w", "4w", "12w"].filter((key) => (groupByKey[key]?.emails.length || 0) > 0).length;
+    const isAcademyCampaign = campaign.id === "academy-subscription-onboarding";
+    const overviewStats = [
+      { label: "Total emails", value: campaign.emails.length },
+      { label: "Groups/tracks", value: groupedEmails.length },
+      { label: "Timeline emails", value: timelineCount },
+      { label: "Event-driven emails", value: eventDrivenCount },
+      { label: "Timeline tracks", value: timelineTrackCount || (timelineCount > 0 ? 1 : 0) },
+    ];
+    const academyTracks = [
+      { label: "1W track", value: groupByKey["1w"]?.emails.length || 0 },
+      { label: "4W track", value: groupByKey["4w"]?.emails.length || 0 },
+      { label: "12W track", value: groupByKey["12w"]?.emails.length || 0 },
+      { label: "Event-driven", value: groupByKey.events?.emails.length || 0 },
+    ];
+    const academyBreakdown = isAcademyCampaign
+      ? `
+        <div class="chain-overview-breakdown" aria-label="Academy tracks">
+          ${academyTracks
+            .map(
+              (track) => `
+                <span class="chain-overview-pill">
+                  <strong>${track.value}</strong> ${escapeHtml(track.label)}
+                </span>
+              `
+            )
+            .join("")}
+        </div>
+      `
+      : "";
+    const stickyNavItems = hasMultipleGroups
+      ? [
+          { href: "#chain-overview-section", label: "Overview" },
+          ...(groupByKey["1w"] ? [{ href: "#group-1w", label: "1W" }] : []),
+          ...(groupByKey["4w"] ? [{ href: "#group-4w", label: "4W" }] : []),
+          ...(groupByKey["12w"] ? [{ href: "#group-12w", label: "12W" }] : []),
+          ...(groupByKey.events ? [{ href: "#group-events", label: "Events" }] : []),
+          { href: "#chain-task-details", label: "Task details" },
+        ]
+      : [];
+    const stickyNavBlock = hasMultipleGroups
+      ? `
+        <nav class="chain-sticky-nav" aria-label="Chain section navigation">
+          <div class="chain-sticky-nav-inner">
+            ${stickyNavItems
+              .map(
+                (item) => `
+                  <a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>
+                `
+              )
+              .join("")}
+          </div>
+        </nav>
+      `
+      : "";
+    const groupedTables = groupedEmails
+      .map(
+        (group) => `
+        <section class="chain-group chain-nav-target" id="group-${escapeHtml(group.key)}">
+          <div class="chain-group-head">
+            <h3>${escapeHtml(group.title)}</h3>
+            <span>${group.emails.length} email${group.emails.length === 1 ? "" : "s"}</span>
+          </div>
+          <div class="table-wrap">
+            <table class="campaign-table campaign-table-wide" role="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>ID</th>
+                  <th>Когда шлется</th>
+                  <th>Subject</th>
+                  <th>Preheader</th>
+                  <th>Открыть</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${renderEmailRows(group.emails, campaign.name, campaign.id)}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      `
+      )
+      .join("");
+
+    const sequenceSection = `
+      <div class="table-wrap">
+        <table class="campaign-table campaign-table-wide" role="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Когда шлется</th>
+              <th>Subject</th>
+              <th>Preheader</th>
+              <th>Открыть</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${renderEmailRows(campaign.emails, campaign.name, campaign.id)}
+          </tbody>
+        </table>
+      </div>
+    `;
+
     root.innerHTML = `
       <section class="hub-meta">
         <p><a href="index.html">← Назад в общий индекс</a></p>
@@ -199,30 +334,44 @@
         </ul>
       </section>
 
+      <section class="hub-meta chain-nav-target" id="chain-overview-section">
+        <h2>Quick overview</h2>
+        <div class="chain-overview-grid">
+          ${overviewStats
+            .map(
+              (stat) => `
+                <article class="chain-overview-card">
+                  <p>${escapeHtml(stat.label)}</p>
+                  <strong>${escapeHtml(stat.value)}</strong>
+                </article>
+              `
+            )
+            .join("")}
+          <article class="chain-overview-card chain-overview-card-wide">
+            <p>Trigger</p>
+            <strong>${escapeHtml(campaign.trigger)}</strong>
+          </article>
+          <article class="chain-overview-card chain-overview-card-wide">
+            <p>Exit</p>
+            <strong>${escapeHtml(campaign.exit)}</strong>
+          </article>
+          <article class="chain-overview-card chain-overview-card-wide">
+            <p>Re-entry</p>
+            <strong>${escapeHtml(campaign.reentry)}</strong>
+          </article>
+        </div>
+        ${academyBreakdown}
+      </section>
+
       <section class="hub-meta">
         <h2>Последовательность писем</h2>
-        <div class="table-wrap">
-          <table class="campaign-table campaign-table-wide" role="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>ID</th>
-                <th>Когда шлется</th>
-                <th>Subject</th>
-                <th>Preheader</th>
-                <th>Открыть</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${renderEmailRows(campaign.emails, campaign.name, campaign.id)}
-            </tbody>
-          </table>
-        </div>
+        ${stickyNavBlock}
+        ${hasMultipleGroups ? `<div class="chain-groups">${groupedTables}</div>` : sequenceSection}
       </section>
 
       ${versionsBlock}
 
-      <section class="hub-meta">
+      <section class="hub-meta chain-nav-target" id="chain-task-details">
         <h2>Детали задачи по цепочке</h2>
         <ul class="meta-compact">${notes}</ul>
       </section>

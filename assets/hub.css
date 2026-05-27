@@ -531,6 +531,140 @@ body.preview-open .hub {
   overflow-x: auto;
 }
 
+.chain-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.chain-overview-card {
+  border: 1px solid #e4e8f9;
+  border-radius: 10px;
+  background: #f8faff;
+  padding: 10px 12px;
+}
+
+.chain-overview-card p {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #697099;
+}
+
+.chain-overview-card strong {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #1d2140;
+}
+
+.chain-overview-card-wide {
+  background: #f4f6ff;
+}
+
+.chain-overview-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chain-overview-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d5dcfb;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #2a3462;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.chain-overview-pill strong {
+  font-size: 12px;
+}
+
+.chain-nav-target {
+  scroll-margin-top: 96px;
+}
+
+.chain-sticky-nav {
+  position: sticky;
+  top: 8px;
+  z-index: 12;
+  margin: 0 0 12px;
+}
+
+.chain-sticky-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #dbe1f8;
+  border-radius: 10px;
+  background: rgba(246, 248, 255, 0.97);
+  backdrop-filter: blur(6px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chain-sticky-nav a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccd4f8;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #2a3a98;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+
+.chain-sticky-nav a:hover {
+  background: #edf1ff;
+  text-decoration: none;
+}
+
+.chain-groups {
+  display: grid;
+  gap: 18px;
+}
+
+.chain-group {
+  border: 1px solid #e6e9f7;
+  border-radius: 10px;
+  background: #fbfcff;
+  padding: 12px;
+}
+
+.chain-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.chain-group-head h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #1f2342;
+}
+
+.chain-group-head span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5074;
+  background: #eef1ff;
+  border-radius: 999px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
 .campaign-table-wide th:nth-child(1),
 .campaign-table-wide td:nth-child(1) {
   width: 48px;
@@ -554,12 +688,39 @@ body.preview-open .hub {
 }
 
 .link-cell {
-  min-width: 210px;
+  min-width: 0;
 }
 
-.link-cell a {
-  display: inline-block;
-  margin: 0 10px 6px 0;
+.email-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.email-action {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d7dcf8;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: #f8f9ff;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.campaign-table .email-action {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.campaign-table .email-action:hover {
+  background: #edf0ff;
+  text-decoration: none;
+}
+
+.email-action-download {
+  border-color: #c6cff9;
+  background: #e9eeff;
 }
 
 .campaign-table-wide .id-cell code {
@@ -720,8 +881,53 @@ body.review-comments-list-open.preview-open .hub {
     margin-bottom: 2px;
   }
 
+  .email-actions {
+    gap: 6px;
+  }
+
+  .campaign-table .email-action {
+    font-size: 11px;
+  }
+
   .cjm-card {
     padding: 14px;
+  }
+
+  .chain-group {
+    padding: 10px;
+  }
+
+  .chain-nav-target {
+    scroll-margin-top: 82px;
+  }
+
+  .chain-overview-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .chain-overview-card {
+    padding: 9px 10px;
+  }
+
+  .chain-overview-card strong {
+    font-size: 13px;
+  }
+
+  .chain-group-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .chain-sticky-nav {
+    top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .chain-sticky-nav-inner {
+    gap: 6px;
+    padding: 7px;
   }
 
   .cjm-card-header {
